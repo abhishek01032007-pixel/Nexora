@@ -25,4 +25,4 @@ This document outlines the technical requirements for running **Nexora Skills Ma
 
 Nexora Skills Manager is packaged as a **self-contained desktop application**:
 - The required engine runtime, bridge, and CLI shims are bundled directly with the application installer.
-- No external runtime installations are required by the user.
+- No external runtime installations, Node.js, or SDKs are required by the user.
