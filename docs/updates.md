@@ -4,7 +4,7 @@ Nexora Skills Manager features a built-in, secure **Update Center** to keep your
 
 ---
 
-## ðŸ”„ How Updates Work
+## 🔄 How Updates Work
 
 1. **Automatic Check**: Nexora checks for available updates on application startup or when clicking **Check for Updates** in the Update Center.
 2. **Cryptographic Validation**: Update payloads are downloaded over HTTPS and verified against SHA-256 checksums before installation.
@@ -12,7 +12,7 @@ Nexora Skills Manager features a built-in, secure **Update Center** to keep your
 
 ---
 
-## ðŸŒ Distribution Architecture Transition
+## 🌐 Distribution Architecture Transition
 
 Nexora is transitioning its public distribution to this official repository (`abhishek01032007-pixel/Nexora`).
 

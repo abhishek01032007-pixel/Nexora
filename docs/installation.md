@@ -4,7 +4,7 @@ Nexora Skills Manager provides a streamlined Windows desktop installation experi
 
 ---
 
-## ðŸš€ Current Installation (v1.0.0)
+## 🚀 Current Installation (v1.0.0)
 
 ### Method 1: Standalone Installer (Recommended)
 1. Download `NexoraSkillsManager-Setup-1.0.0.exe` from the [Official Release](https://github.com/abhishek01032007-pixel/Nexora-Skills-Manager/releases/tag/v1.0.0).
@@ -19,7 +19,7 @@ irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora-Skills-Manag
 
 ---
 
-## ðŸ”® Planned Distribution Setup Wizard (Coming in Next Release)
+## 🔮 Planned Distribution Setup Wizard (Coming in Next Release)
 
 Upcoming releases will provide a professional Windows Setup Wizard:
 1. **Download**: Click **Download Latest Version** from the repository home.
@@ -30,7 +30,7 @@ Upcoming releases will provide a professional Windows Setup Wizard:
 
 ---
 
-## ðŸ—‘ï¸ Uninstallation
+## 🗑️ Uninstallation
 
 To uninstall Nexora Skills Manager:
 1. Open **Windows Settings** -> **Apps** -> **Installed Apps**.

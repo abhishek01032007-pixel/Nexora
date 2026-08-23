@@ -4,16 +4,16 @@ This document outlines the technical requirements for running **Nexora Skills Ma
 
 ---
 
-## ðŸ–¥ï¸ Operating System
+## 🖥️ Operating System
 
-- **Windows 11**: 64-bit (x64) â€” Recommended
+- **Windows 11**: 64-bit (x64) — Recommended
 - **Windows 10**: 64-bit (x64), Version 1909 or higher
 
 *Note: ARM64 and 32-bit Windows builds are not currently supported.*
 
 ---
 
-## âš™ï¸ Hardware Specifications
+## ⚙️ Hardware Specifications
 
 - **Processor**: Intel Core i3 / AMD Ryzen 3 or equivalent (x64 architecture)
 - **Memory (RAM)**: 4 GB minimum (8 GB recommended for multi-project workflows)
@@ -21,7 +21,7 @@ This document outlines the technical requirements for running **Nexora Skills Ma
 
 ---
 
-## ðŸ”Œ Environment & Dependencies
+## 🔌 Environment & Dependencies
 
 Nexora Skills Manager is packaged as a **self-contained desktop application**:
 - The required engine runtime, bridge, and CLI shims are bundled directly with the application installer.

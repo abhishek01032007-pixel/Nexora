@@ -8,7 +8,7 @@ AI-powered developer skill management and orchestration for modern development w
 
 ---
 
-## ðŸ“¥ Download
+## 📥 Download
 
 [**Download Latest Version**](https://github.com/abhishek01032007-pixel/Nexora/releases/latest/download/NexoraSkillsManager-Setup.exe)
 
@@ -19,7 +19,7 @@ AI-powered developer skill management and orchestration for modern development w
 
 ---
 
-## ðŸ’¡ What is Nexora Skills Manager?
+## 💡 What is Nexora Skills Manager?
 
 Nexora Skills Manager is a local-first Windows desktop control center and CLI that equips your AI coding assistants with specialized, battle-tested engineering capabilities.
 
@@ -27,7 +27,7 @@ Instead of writing repetitive prompt instructions for every project, Nexora scan
 
 ---
 
-## âš¡ Key Features
+## ⚡ Key Features
 
 - **Native Windows Desktop Host**: Fast, high-contrast Electron desktop dashboard with real-time health diagnostics.
 - **Deep Project Intelligence**: Detects frameworks, languages, and architecture markers locally on your device.
@@ -36,11 +36,11 @@ Instead of writing repetitive prompt instructions for every project, Nexora scan
 - **Multi-Platform Deployment**: Generates native configs for Google Antigravity, Cursor, and GitHub Copilot with one click.
 - **Unified Windows CLI (`nexora`)**: Instant terminal access for interactive skill activation, scans, and doctor diagnostics.
 - **Secure Update Center**: Built-in cryptographic verification with automatic rollback protection.
-- **100% Local & Private**: Operates entirely offline with zero source code uploads or external telemetry.
+- **Local-First Project Processing**: Operates locally on your device without source code uploads or tracking telemetry.
 
 ---
 
-## ðŸ¤– Supported AI Platforms
+## 🤖 Supported AI Platforms
 
 Nexora formats and synchronizes skills across leading AI developer environments:
 
@@ -52,7 +52,7 @@ Nexora formats and synchronizes skills across leading AI developer environments:
 
 ---
 
-## ðŸ’» System Requirements
+## 💻 System Requirements
 
 - **Operating System**: Windows 10 (64-bit) or Windows 11 (64-bit)
 - **Architecture**: x64
@@ -62,7 +62,7 @@ For detailed hardware and environment notes, see [System Requirements](docs/syst
 
 ---
 
-## ðŸ“– Documentation
+## 📖 Documentation
 
 - [Installation Guide](docs/installation.md)
 - [System Requirements](docs/system-requirements.md)
@@ -72,15 +72,16 @@ For detailed hardware and environment notes, see [System Requirements](docs/syst
 
 ---
 
-## ðŸ”’ Privacy & Security
+## 🔒 Privacy & Public Release Transparency
 
-Nexora Skills Manager is designed with strict local-first security principles:
-- **Zero Telemetry**: We do not collect, track, or transmit your code, project structure, or usage patterns.
-- **Zero Cloud Storage**: All scanning and skill management execute 100% locally on your machine.
-- **Open Source & Transparent**: Released under the standard [MIT License](LICENSE).
+Nexora Skills Manager is designed with strict local-first security and distribution transparency principles:
+- **Local-First Processing**: Project analysis, stack detection, and skill generation run locally on your machine without transmitting project contents off-device.
+- **Zero Usage Telemetry**: Nexora does not include product analytics, usage telemetry, or source-code tracking.
+- **Transparent Distribution**: Public release manifests, official binary checksums (SHA-256), and licensing terms are published openly in this distribution repository.
+- **HTTPS Network Updates**: Internet connectivity is used strictly for checking and downloading official application updates over secure HTTPS.
 
 ---
 
-## ðŸ’¬ Support & Inquiries
+## 💬 Support & Inquiries
 
 For feature suggestions, questions, or bug reports, please open an issue in the [GitHub Issue Tracker](https://github.com/abhishek01032007-pixel/Nexora/issues).
