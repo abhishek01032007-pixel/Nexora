@@ -1,4 +1,4 @@
-﻿# Update Center & Releases
+# Update Center & Releases
 
 Nexora Skills Manager features a built-in, secure **Update Center** to keep your skills and desktop host up to date.
 

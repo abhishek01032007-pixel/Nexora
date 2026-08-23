@@ -1,4 +1,4 @@
-﻿# System Requirements
+# System Requirements
 
 This document outlines the technical requirements for running **Nexora Skills Manager**.
 

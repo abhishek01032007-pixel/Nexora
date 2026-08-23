@@ -1,4 +1,4 @@
-﻿# Nexora Skills Manager
+# Nexora Skills Manager
 
 AI-powered developer skill management and orchestration for modern development workflows.
 

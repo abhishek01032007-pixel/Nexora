@@ -1,4 +1,4 @@
-﻿# Privacy Commitment
+# Privacy Commitment
 
 Nexora Skills Manager is built with a fundamental commitment to user privacy and data security.
 

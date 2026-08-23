@@ -1,4 +1,4 @@
-﻿# Installation Guide
+# Installation Guide
 
 Nexora Skills Manager provides a streamlined Windows desktop installation experience.
 
