@@ -1,12 +1,14 @@
 {
   "schemaVersion": 1,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "product": "Nexora Skills Manager",
   "channel": "stable",
-  "publishedAt": "2026-08-27T15:22:59Z",
+  "publishedAt": "2026-08-29T07:08:17Z",
   "platform": "win32",
   "arch": "x64",
   "installer": "https://github.com/abhishek01032007-pixel/Nexora/releases/latest/download/NexoraSkillsManager-Setup.exe",
-  "sha256": "8982a8aa1cbdd0c8f98653f386306e0ed2231ce04e3821dcd93c0bde2cdfce95",
-  "releaseNotesUrl": "https://github.com/abhishek01032007-pixel/Nexora/releases/tag/v1.1.0"
+  "sha256": "cb85a7a02b0505a80b98568fc0ba22499404c73b67152e33fa24c20a3d62e847",
+  "bootstrapper": "https://github.com/abhishek01032007-pixel/Nexora/releases/latest/download/NexoraBootstrap.exe",
+  "bootstrapperSha256": "101186eea38cc5620c16f6ea125d8c5d5a0b73ad356eb3f10b3be054fa3038b6",
+  "releaseNotesUrl": "https://github.com/abhishek01032007-pixel/Nexora/releases/tag/v1.2.0"
 }
