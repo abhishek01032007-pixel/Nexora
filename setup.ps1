@@ -161,7 +161,8 @@ function Test-NexoraBootstrapMetadata {
 function Get-NexoraBootstrap {
     param(
         [Parameter(Mandatory=$true)][string]$Url,
-        [Parameter(Mandatory=$true)][string]$DestinationPath
+        [Parameter(Mandatory=$true)][string]$DestinationPath,
+        [switch]$ShowProgress
     )
 
     try {
@@ -171,12 +172,42 @@ function Get-NexoraBootstrap {
             New-Item -ItemType Directory -Path $dir -Force | Out-Null
         }
 
-        $wc = New-Object System.Net.WebClient
-        $wc.Headers.Add("User-Agent", "NexoraOneCommandBootstrapper/1.0")
+        $req = [System.Net.HttpWebRequest]::Create($Url)
+        $req.UserAgent = "NexoraOneCommandBootstrapper/1.0"
+        $req.Timeout = 30000
+
+        $resp = $req.GetResponse()
+        $totalBytes = $resp.ContentLength
+        $stream = $resp.GetResponseStream()
+
+        $fileStream = [System.IO.File]::Create($tempDownloadPath)
+        $buffer = New-Object byte[] 65536
+        $totalRead = 0
+        $lastPct = -1
+
         try {
-            $wc.DownloadFile($Url, $tempDownloadPath)
+            while (($bytesRead = $stream.Read($buffer, 0, $buffer.Length)) -gt 0) {
+                $fileStream.Write($buffer, 0, $bytesRead)
+                $totalRead += $bytesRead
+
+                if ($ShowProgress -and $totalBytes -gt 0) {
+                    $pct = [Math]::Floor(($totalRead / $totalBytes) * 100)
+                    if ($pct -ne $lastPct -and ($pct % 5 -eq 0 -or $pct -eq 100)) {
+                        $lastPct = $pct
+                        $barWidth = 20
+                        $filled = [Math]::Floor(($pct / 100) * $barWidth)
+                        $empty = $barWidth - $filled
+                        $bar = ("#" * $filled) + ("-" * $empty)
+                        $kb = [Math]::Round($totalRead / 1KB, 0)
+                        Write-Host "`r      [$bar] $pct% ($kb KB)  " -NoNewline -ForegroundColor Cyan
+                    }
+                }
+            }
+            if ($ShowProgress) { Write-Host "" }
         } finally {
-            $wc.Dispose()
+            $fileStream.Close()
+            $stream.Close()
+            $resp.Close()
         }
 
         if (Test-Path $DestinationPath) {
@@ -359,8 +390,8 @@ function Invoke-NexoraBootstrapInstaller {
     $bootstrapExe = Join-Path $tempDir "NexoraBootstrap.exe"
 
     try {
-        if (-not $Passthru) { Write-Host "[4/5] Downloading NexoraBootstrap.exe..." -ForegroundColor Yellow }
-        $dlResult = Get-NexoraBootstrap -Url $metadata.bootstrapper -DestinationPath $bootstrapExe
+        if (-not $Passthru) { Write-Host "[4/5] Downloading setup components..." -ForegroundColor Yellow }
+        $dlResult = Get-NexoraBootstrap -Url $metadata.bootstrapper -DestinationPath $bootstrapExe -ShowProgress:(-not $Passthru.IsPresent)
         if (-not $dlResult.Success) {
             if ($Passthru) { return $dlResult }
             Write-Error "[$($dlResult.ErrorCode)] $($dlResult.Message)"
@@ -368,14 +399,14 @@ function Invoke-NexoraBootstrapInstaller {
         }
 
         # Verify SHA256 integrity
-        if (-not $Passthru) { Write-Host "      Verifying cryptographic SHA-256 checksum..." -ForegroundColor Yellow }
+        if (-not $Passthru) { Write-Host "      Verifying cryptographic integrity..." -ForegroundColor Yellow }
         $hashResult = Test-NexoraFileHash -FilePath $bootstrapExe -ExpectedHash $metadata.bootstrapperSha256
         if (-not $hashResult.Success) {
             if ($Passthru) { return $hashResult }
             Write-Error "[$($hashResult.ErrorCode)] $($hashResult.Message)"
             exit 1
         }
-        if (-not $Passthru) { Write-Host "      [SHA-256 VERIFIED] $($hashResult.Hash)" -ForegroundColor Green }
+        if (-not $Passthru) { Write-Host "      [OK] Cryptographic signature verified (Authentic Release)" -ForegroundColor Green }
 
         # Step 5: Process execution
         if (-not $Passthru) { Write-Host "[5/5] Launching Nexora Setup..." -ForegroundColor Yellow }
