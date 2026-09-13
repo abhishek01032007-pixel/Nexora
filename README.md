@@ -11,7 +11,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011%20x64-0078D4?style=flat-square" alt="Platform: Windows x64" />
   <img src="https://img.shields.io/badge/Release-v1.2.0-2563EB?style=flat-square" alt="Release: v1.2.0" />
-  <img src="https://img.shields.io/badge/Catalog-48%20Skills-6366F1?style=flat-square" alt="Catalog: 48 Skills" />
+  <img src="https://img.shields.io/badge/Catalog-49%20Skills-6366F1?style=flat-square" alt="Catalog: 48 Skills" />
   <img src="https://img.shields.io/badge/CLI-nexora-10B981?style=flat-square" alt="CLI: nexora" />
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License: MIT" />
 </p>
@@ -24,7 +24,7 @@
 
 Instead of writing repetitive prompts or manually configuring rules for every new project, Nexora:
 1. **Scans your codebase** locally to identify frameworks, languages, and architectural patterns.
-2. **Recommends specialized engineering skills** from a library of **48 curated production skills**.
+2. **Recommends specialized engineering skills** from a library of **49 curated production skills**.
 3. **Deploys native, formatted instruction sets** directly into your workspace (`.agents/`, `.cursor/`, or `.github/`).
 4. **Manages skill lifecycles, 3-way checksum updates, and atomic rollbacks** safely across all projects.
 
@@ -52,7 +52,7 @@ If you are already inside a PowerShell prompt:
 irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex
 ```
 
-> **What the installer does:** Deploys the self-contained runtime engine and 48 skill packs to `%LOCALAPPDATA%\NexoraSkillsManager\runtime\`, installs the Electron desktop host to `%LOCALAPPDATA%\Programs\NexoraSkillsManager\`, adds the native `nexora` command to your `PATH`, and creates Desktop & Start Menu shortcuts.
+> **What the installer does:** Deploys the self-contained runtime engine and 49 skill packs to `%LOCALAPPDATA%\NexoraSkillsManager\runtime\`, installs the Electron desktop host to `%LOCALAPPDATA%\Programs\NexoraSkillsManager\`, adds the native `nexora` command to your `PATH`, and creates Desktop & Start Menu shortcuts.
 
 ---
 
@@ -74,7 +74,7 @@ The **Nexora Screen Manager** is the unified visual desktop control center built
 │   [ 3. Recommendations ] ──> AI-matched skills based on confidence     │
 │         │                                                              │
 │         ▼                                                              │
-│   [ 4. Skill Library ] ───> Browse all 48 skills & toggle activation   │
+│   [ 4. Skill Library ] ───> Browse all 49 skills & toggle activation   │
 │         │                                                              │
 │         ▼                                                              │
 │   [ 5. Platform Target ] ─> Pick Antigravity, Cursor, Copilot, etc.    │
@@ -94,7 +94,7 @@ The **Nexora Screen Manager** is the unified visual desktop control center built
 | **Add Project Screen** | Quick file-picker to import projects into the manager with instant detection. |
 | **Project Analysis Screen** | Deep scan displaying detected tech stacks, architectural markers, and confidence scores. |
 | **Recommended Skills Screen** | Stack-aware recommendations ranked by project fit with one-click activation. |
-| **Skill Library Screen** | Full searchable catalog of all 48 engineering skills with category filters. |
+| **Skill Library Screen** | Full searchable catalog of all 49 engineering skills with category filters. |
 | **Skill Detail Screen** | Full inspection of skill markdown, frontmatter, parameters, and platform previews. |
 | **Active Skills Screen** | Manage currently deployed skills for the selected project with easy deactivation. |
 | **Platform Selection Screen** | Configure where skills deploy: Google Antigravity, Cursor, or GitHub Copilot. |
@@ -109,7 +109,7 @@ The **Nexora Screen Manager** is the unified visual desktop control center built
 
 ## 📚 Complete Universal Skill Catalog (48 Skills)
 
-Nexora includes **48 battle-tested engineering skill packs**, organized across four functional pillars:
+Nexora includes **49 battle-tested engineering skill packs**, organized across four functional pillars:
 
 ### 1. 🎨 Frontend, Mobile & UI/UX (13 Skills)
 | Skill ID | Category | Description |
@@ -167,9 +167,10 @@ Nexora includes **48 battle-tested engineering skill packs**, organized across f
 | `flutter-add-widget-test` | Testing | Component-level UI testing via WidgetTester. |
 | `flutter-add-integration-test` | Testing | End-to-end device testing using Flutter Driver and integration tests. |
 
-### 4. 🌐 Full-Stack & Multi-Agent Orchestration (4 Skills)
+### 4. 🌐 Full-Stack, Optimization & Multi-Agent Orchestration (5 Skills)
 | Skill ID | Category | Description |
 |---|---|---|
+| `token-manager` | Optimization | High-performance AI prompt token governor (Low tokens, High output across Low/Med/High usage). |
 | `agent-orchestration-multi-agent-optimize` | AI Agents | Coordinated multi-agent profiling, task routing, and cost-aware orchestration. |
 | `full-stack-orchestration-full-stack-feature` | Full Stack | Coordinated end-to-end implementation across database, API, and UI layers. |
 | `flutter-fix-layout-issues` | Layout | Visual debugger for RenderFlex overflows and unbounded height constraints. |
