@@ -32,16 +32,24 @@ Instead of writing repetitive prompts or manually configuring rules for every ne
 
 ## ⚡ Quick One-Command Setup (Windows x64)
 
-Install Nexora with a single command in **Windows PowerShell**, **Command Prompt (CMD)**, or the **VS Code Integrated Terminal**:
+Install Nexora with a single command that runs out of the box in **any Windows terminal** (**Windows PowerShell**, **Command Prompt (CMD)**, or **VS Code Terminal**):
 
-### In Windows PowerShell (Recommended)
-```powershell
-irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex
+```cmd
+powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex"
 ```
 
-### In Command Prompt (CMD)
+> 💡 **One command for both PowerShell & CMD:** You can paste this exact command into **PowerShell** or **Command Prompt**. It automatically verifies system requirements, fetches the verified cryptographic release, and opens the **interactive Windows setup wizard** where you can choose your installation directory (like Brave or Chrome), select shortcut options, and launch Nexora.
+
+### 📦 Alternative: Windows Package Manager (WinGet)
+If you use WinGet, you can install from any terminal with:
 ```cmd
-powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex"
+winget install Nexora.NexoraSkillsManager
+```
+
+### ⚡ Pure PowerShell Shorthand
+If you are already inside a PowerShell prompt:
+```powershell
+irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex
 ```
 
 > **What the installer does:** Deploys the self-contained runtime engine and 48 skill packs to `%LOCALAPPDATA%\NexoraSkillsManager\runtime\`, installs the Electron desktop host to `%LOCALAPPDATA%\Programs\NexoraSkillsManager\`, adds the native `nexora` command to your `PATH`, and creates Desktop & Start Menu shortcuts.
