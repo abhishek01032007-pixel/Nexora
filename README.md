@@ -17,15 +17,15 @@
 
 ---
 
-## 🌟 What is Nexora Skills Manager?
+## 🌟 Overview
 
-**Nexora Skills Manager** is a local-first Windows desktop control center and unified command-line tool (`nexora`) designed to supercharge AI coding assistants—including **Google Antigravity**, **Cursor**, **GitHub Copilot**, **OpenAI Codex**, and **Claude Code**.
+**Nexora Skills Manager** is a standalone Windows desktop control center and unified command-line tool (`nexora`) designed to supercharge AI coding assistants—including **Google Antigravity**, **Cursor**, **GitHub Copilot**, **OpenAI Codex**, and **Claude Code**.
 
 Instead of manually writing and repeating prompts, rules, or system instructions for every new project, Nexora:
-1. **Scans your codebase** to detect frameworks, languages, and architectural patterns.
-2. **Recommends role-specific skills** from a catalog of **48 curated production engineering skills**.
-3. **Deploys native, formatted instruction sets** directly into your project workspace (`.agents/`, `.cursor/`, or `.github/`).
-4. **Manages skill updates & versioning** with automated 3-way checksum conflict detection and safe, single-click rollbacks.
+1. Scans your codebase to identify frameworks, languages, and architectural patterns.
+2. Recommends battle-tested engineering skills from a catalog of **48 curated production skills**.
+3. Deploys native, formatted instruction sets directly into your workspace (`.agents/`, `.cursor/`, or `.github/`).
+4. Manages updates, 3-way checksum conflict detection, and atomic rollbacks safely across all your projects.
 
 ---
 
@@ -33,12 +33,12 @@ Instead of manually writing and repeating prompts, rules, or system instructions
 
 Install Nexora with a single command in **Windows PowerShell**, **Command Prompt (CMD)**, or the **VS Code Integrated Terminal**:
 
-### In Windows PowerShell (Recommended):
+### Option 1: In Windows PowerShell (Recommended)
 ```powershell
 irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex
 ```
 
-### In Command Prompt (CMD):
+### Option 2: In Command Prompt (CMD)
 ```cmd
 powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex"
 ```
@@ -48,13 +48,13 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://raw.githubus
 - Deploys the isolated runtime engine and skill packs to `%LOCALAPPDATA%\NexoraSkillsManager\runtime\`.
 - Installs the Electron Desktop application to `%LOCALAPPDATA%\Programs\NexoraSkillsManager\`.
 - Registers the native CLI command (`nexora.cmd`) to your user `PATH`.
-- Creates Start Menu and Desktop shortcuts for instant access.
+- Creates Start Menu and Desktop shortcuts for one-click access.
 
 ---
 
 ## 🧠 How Nexora Skills Manager Works
 
-Nexora connects your local engineering environment with your AI coding tools through a seamless 4-step workflow:
+Nexora connects your local engineering environment with your AI coding tools through a 4-step workflow:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -93,34 +93,34 @@ Nexora connects your local engineering environment with your AI coding tools thr
 
 Nexora formats and synchronizes skills across leading AI developer environments:
 
-| AI Platform | Target Configuration | Output Format / Location |
+| AI Platform | Target File / Location | How Nexora Formats It |
 |---|---|---|
-| **Google Antigravity** | Multi-file skill packages | `.agents/skills/<skill>/SKILL.md` with YAML frontmatter |
-| **Cursor IDE** | Modern MDC rules format | `.cursor/rules/<skill>.mdc` with frontmatter filters |
-| **GitHub Copilot & Codex (VS Code)** | Workspace instructions | `.github/copilot-instructions.md` within safe delimiters (`<!-- NEXORA:START -->`) |
-| **Claude Code** | Workspace instructions & rules | Automatically reads `.github/` and `.cursor/` workspace rules |
-| **Roo Code / Cline (VS Code)** | Compatible rule format | Supported via standard `.cursor/rules/` and markdown configs |
+| **Google Antigravity** | `.agents/skills/<skill>/SKILL.md` | Standard multi-file skill folder with YAML frontmatter |
+| **Cursor IDE** | `.cursor/rules/<skill>.mdc` | Modern MDC rules with YAML metadata and scope filters |
+| **GitHub Copilot & Codex (VS Code)** | `.github/copilot-instructions.md` | Consolidated instructions inside safe delimited blocks (`<!-- NEXORA:START -->`) |
+| **Claude Code** | Project workspace | Natively reads workspace instructions and rules |
+| **Roo Code / Cline (VS Code)** | `.cursor/rules/` & `.clinerules` | Supported via compatible rule format |
 
 ---
 
 ## 💻 Using the CLI (`nexora`) Anywhere
 
-Once installed, the `nexora` command is available globally from **CMD**, **PowerShell**, or any terminal inside **VS Code**:
+Once installed, the `nexora` command is available from **CMD**, **PowerShell**, or any terminal inside **VS Code**:
 
 ```bash
-# Launch the interactive desktop manager & project selector
+# Launch interactive project selector & desktop mode manager
 nexora
 
-# Inspect tech stack of a project (e.g. current directory in VS Code)
+# Inspect tech stack of a project (e.g. current directory)
 nexora scan .
 
-# List all 48 available engineering skills in the catalog
+# List all 48 available skills in the universal catalog
 nexora skills list
 
-# Activate a skill for GitHub Copilot & Codex in VS Code
+# Activate a skill for GitHub Copilot / VS Code
 nexora skills add flutter-build-responsive-layout --platform copilot
 
-# Activate a skill for Cursor & Claude Code
+# Activate a skill for Cursor / Claude Code
 nexora skills add backend-architect --platform cursor
 
 # Activate a skill for Google Antigravity
@@ -129,7 +129,7 @@ nexora skills add ui_ux_pro_max --platform antigravity
 # Run health diagnostics & environment verification
 nexora doctor
 
-# Revert managed skills to previous backup snapshot
+# Roll back skills in a project to previous backup
 nexora rollback .
 ```
 
@@ -171,16 +171,28 @@ Nexora utilizes an Electron + PowerShell hybrid architecture for maximum perform
 - **Operating System:** Windows 10 (64-bit) or Windows 11 (64-bit)
 - **Architecture:** x64
 - **PowerShell:** 5.1 or later (Built into Windows 10 & 11)
-- **Dependencies:** None (All runtimes and packages are completely self-contained)
+- **Dependencies:** None (All runtimes and packages are self-contained)
 
 ---
 
-## 🤝 Community & Support
+## 📌 Repositories & Private Source Access
 
-- **Repository & Releases:** [https://github.com/abhishek01032007-pixel/Nexora](https://github.com/abhishek01032007-pixel/Nexora)
+Nexora Skills Manager is structured across two distinct repositories:
+
+| Repository | Visibility | Role & Description |
+|---|---|---|
+| **[Nexora (THIS REPOSITORY)](https://github.com/abhishek01032007-pixel/Nexora)** | 🌐 **Public** | Official distribution channel, public installer bootstrappers, releases, issue tracker, and user documentation. |
+| **[Nexora-Skills-Manager](https://github.com/abhishek01032007-pixel/Nexora-Skills-Manager)** | 🔒 **Private** | Core engineering repository containing full application source, Electron desktop app, PowerShell engine runtime, and 48 skill definitions. |
+
+> 🔑 **Requesting Team / Contributor Access:**
+> If you are a team member, partner, or authorized developer requiring access to the private core engineering repository, please request access via [GitHub Repository Access](https://github.com/abhishek01032007-pixel/Nexora-Skills-Manager) or open an inquiry on our [Issue Tracker](https://github.com/abhishek01032007-pixel/Nexora/issues).
+
+---
+
+## 🤝 Support & Feedback
+
 - **Bug Reports & Feature Requests:** [Open an Issue](https://github.com/abhishek01032007-pixel/Nexora/issues)
-
----
+- **License:** MIT License
 
 <p align="center">
   Built with ❤️ for modern AI-assisted software engineers.
