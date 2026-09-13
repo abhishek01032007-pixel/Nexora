@@ -277,9 +277,11 @@ function Start-NexoraBootstrap {
 
     try {
         $procArgs = @{
-            FilePath     = $ExecutablePath
-            ArgumentList = $Arguments
-            PassThru     = $true
+            FilePath = $ExecutablePath
+            PassThru = $true
+        }
+        if ($Arguments -and $Arguments.Count -gt 0) {
+            $procArgs["ArgumentList"] = $Arguments
         }
         $proc = Start-Process @procArgs
         return @{
