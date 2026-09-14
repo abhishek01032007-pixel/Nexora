@@ -5,28 +5,31 @@
 </p>
 
 <p align="center">
-  <strong>Modular AI Agent Skill Orchestration, Desktop Management & Multi-Platform Deployment for Windows.</strong>
+  <strong>Modular AI Agent Skill Orchestration, Desktop Management & 5-Platform Deployment for Windows.</strong>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011%20x64-0078D4?style=flat-square" alt="Platform: Windows x64" />
   <img src="https://img.shields.io/badge/Release-v1.2.0-2563EB?style=flat-square" alt="Release: v1.2.0" />
-  <img src="https://img.shields.io/badge/Catalog-49%20Skills-6366F1?style=flat-square" alt="Catalog: 48 Skills" />
-  <img src="https://img.shields.io/badge/CLI-nexora-10B981?style=flat-square" alt="CLI: nexora" />
+  <img src="https://img.shields.io/badge/Skill%20Pack-v1.1.0-10B981?style=flat-square" alt="Skill Pack: v1.1.0" />
+  <img src="https://img.shields.io/badge/Catalog-49%20Skills-6366F1?style=flat-square" alt="Catalog: 49 Skills" />
+  <img src="https://img.shields.io/badge/CLI-nexora-0F766E?style=flat-square" alt="CLI: nexora" />
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License: MIT" />
+  <img src="https://img.shields.io/badge/Architecture-100%25%20Offline%20First-8B5CF6?style=flat-square" alt="Architecture: Offline-First" />
 </p>
 
 ---
 
 ## 🌟 Overview
 
-**Nexora Skills Manager** is a standalone Windows desktop control center and unified command-line tool (`nexora`) designed to supercharge AI coding assistants—including **Google Antigravity**, **Cursor**, **GitHub Copilot**, **OpenAI Codex**, and **Claude Code**.
+**Nexora Skills Manager** is a standalone Windows desktop control center and unified command-line tool (`nexora`) designed to supercharge modern AI coding assistants—including **Google Antigravity**, **Cursor IDE**, **GitHub Copilot**, **Claude Code**, and **OpenAI Codex**.
 
-Instead of writing repetitive prompts or manually configuring rules for every new project, Nexora:
-1. **Scans your codebase** locally to identify frameworks, languages, and architectural patterns.
-2. **Recommends specialized engineering skills** from a library of **49 curated production skills**.
-3. **Deploys native, formatted instruction sets** directly into your workspace (`.agents/`, `.cursor/`, or `.github/`).
-4. **Manages skill lifecycles, 3-way checksum updates, and atomic rollbacks** safely across all projects.
+Instead of writing repetitive prompt instructions or manually configuring rules for every new project, Nexora:
+1. **Scans your codebase** locally to discover frameworks, languages, dependencies, and architectural patterns.
+2. **Recommends specialized engineering skills** from a curated library of **49 production skill packs**.
+3. **Deploys native, formatted instruction sets** simultaneously across 5 platforms (`.agents/`, `.cursor/`, `.github/`, `.claude/`, or `.codex/`).
+4. **Governs prompt token consumption** via a dynamic Token Safety Meter with context-window headroom safeguards.
+5. **Manages skill lifecycles, 3-way checksum updates, and atomic rollbacks** safely across all local projects.
 
 ---
 
@@ -34,31 +37,42 @@ Instead of writing repetitive prompts or manually configuring rules for every ne
 
 Install Nexora with a single command that runs out of the box in **any Windows terminal** (**Windows PowerShell**, **Command Prompt (CMD)**, or **VS Code Terminal**):
 
-```cmd
-powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex"
-```
-
-> 💡 **One command for both PowerShell & CMD:** You can paste this exact command into **PowerShell** or **Command Prompt**. It automatically verifies system requirements, fetches the verified cryptographic release, and opens the **interactive Windows setup wizard** where you can choose your installation directory (like Brave or Chrome), select shortcut options, and launch Nexora.
-
-### 📦 Alternative: Windows Package Manager (WinGet)
-If you use WinGet, you can install from any terminal with:
-```cmd
-winget install Nexora.NexoraSkillsManager
-```
-
-### ⚡ Pure PowerShell Shorthand
-If you are already inside a PowerShell prompt:
 ```powershell
 irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex
 ```
 
-> **What the installer does:** Deploys the self-contained runtime engine and 49 skill packs to `%LOCALAPPDATA%\NexoraSkillsManager\runtime\`, installs the Electron desktop host to `%LOCALAPPDATA%\Programs\NexoraSkillsManager\`, adds the native `nexora` command to your `PATH`, and creates Desktop & Start Menu shortcuts.
+### Windows Command Prompt (CMD):
+```cmd
+powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex"
+```
+
+> 💡 **One command for both PowerShell & CMD:** Automatically verifies system requirements, checks cryptographic SHA-256 integrity, unpacks into `%LOCALAPPDATA%\NexoraSkillsManager`, registers the `nexora` command in your User `PATH`, and launches the Desktop manager.
+
+### 📦 Alternative: Windows Package Manager (WinGet)
+```cmd
+winget install Nexora.NexoraSkillsManager
+```
+
+### 💾 Standalone GUI Installer (.exe)
+Download `NexoraSkillsManager-Setup.exe` directly from the [Official GitHub Releases](https://github.com/abhishek01032007-pixel/Nexora/releases).
 
 ---
 
-## 🖥️ What is the Screen Manager & How to Use It?
+## 🎨 Multi-Theme Engine & Visual Design
 
-The **Nexora Screen Manager** is the unified visual desktop control center built for engineers who prefer an interactive dashboard alongside their IDE:
+Nexora Desktop features a responsive interface engineered with a dynamic multi-theme engine:
+
+* 🖥️ **System Theme (Auto-Sync)**: Dynamically aligns with your Windows 10/11 system light or dark preference in real-time.
+* ☀️ **White Normal Mode (Daylight Clean)**: Clean daylight background (`#ffffff` / `#f8f9fa`) with deep slate typography (`#0f172a`), crisp contrast borders, and full WCAG AA compliance.
+* 🌘 **Dark Mode (Charcoal Slate)**: Deep charcoal foundation (`#13131b`) with violet accent highlights.
+* ⚡ **Zero-Flash Startup**: Instantaneous theme application before first paint.
+* 🔄 **Top Bar Quick Switcher**: Toggle between System, Dark, and Light themes directly from the header navigation bar.
+
+---
+
+## 🖥️ The Screen Manager & User Flow
+
+The **Nexora Screen Manager** provides a visual desktop control center built for engineers who prefer an interactive dashboard alongside their IDE:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -74,20 +88,23 @@ The **Nexora Screen Manager** is the unified visual desktop control center built
 │   [ 3. Recommendations ] ──> AI-matched skills based on confidence     │
 │         │                                                              │
 │         ▼                                                              │
-│   [ 4. Skill Library ] ───> Browse all 49 skills & toggle activation   │
+│   [ 4. Token Governor ] ───> Monitors token budget & context safety    │
 │         │                                                              │
 │         ▼                                                              │
-│   [ 5. Platform Target ] ─> Pick Antigravity, Cursor, Copilot, etc.    │
+│   [ 5. Skill Library ] ───> Browse all 49 skills & toggle activation   │
 │         │                                                              │
 │         ▼                                                              │
-│   [ 6. Update Center ] ───> 3-way checksum diffs & safe bulk updates   │
+│   [ 6. Platform Target ] ─> Pick Antigravity, Cursor, Copilot, etc.    │
+│         │                                                              │
+│         ▼                                                              │
+│   [ 7. Update Center ] ───> 3-way checksum diffs & safe bulk updates   │
 │                                                                        │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-### The 15 Integrated Screens
+### The 15 Integrated Screens & Modules
 
-| Screen | Purpose & Capabilities |
+| Screen / View | Purpose & Capabilities |
 |---|---|
 | **Startup Screen** | Self-healing engine bootstrapper with path and permissions check. |
 | **Dashboard Screen** | Central hub listing registered projects, active skill counts, and update status. |
@@ -96,8 +113,8 @@ The **Nexora Screen Manager** is the unified visual desktop control center built
 | **Recommended Skills Screen** | Stack-aware recommendations ranked by project fit with one-click activation. |
 | **Skill Library Screen** | Full searchable catalog of all 49 engineering skills with category filters. |
 | **Skill Detail Screen** | Full inspection of skill markdown, frontmatter, parameters, and platform previews. |
-| **Active Skills Screen** | Manage currently deployed skills for the selected project with easy deactivation. |
-| **Platform Selection Screen** | Configure where skills deploy: Google Antigravity, Cursor, or GitHub Copilot. |
+| **Active Skills Screen** | Manage currently deployed skills for the selected project with Token Safety Meter. |
+| **Platform Selection Screen** | Configure where skills deploy: Antigravity, Cursor, Copilot, Claude, or Codex. |
 | **Cross-Project Usage Screen** | Matrix view showing which skills are shared across different workspaces. |
 | **Update Center Screen** | Unified tabbed center for Application Updates and Skill Updates. |
 | **Skill Update Center View** | Preflight planning, selective bulk updates, and interrupted batch recovery. |
@@ -107,7 +124,21 @@ The **Nexora Screen Manager** is the unified visual desktop control center built
 
 ---
 
-## 📚 Complete Universal Skill Catalog (48 Skills)
+## 🤖 Multi-Platform AI Target Matrix (5 Platforms)
+
+Nexora automatically generates native configurations tailored to each AI assistant's official standard:
+
+| Platform | Generated File / Format | How the AI Tool Uses It |
+|---|---|---|
+| **Google Antigravity** | `.agents/skills/<skill>/SKILL.md` | Auto-discovered by Antigravity's agent skill system. |
+| **Cursor IDE** | `.cursor/rules/<skill>.mdc` | Evaluated on every prompt and code edit inside Cursor. |
+| **GitHub Copilot** | `.github/copilot-instructions.md` | Injected inside safe delimiter fences; followed on code generation. |
+| **Claude Code** | `.claude/skills/<skill>/SKILL.md` | Anthropic native skill container auto-loaded by Claude CLI. |
+| **OpenAI Codex** | `.codex/skills/<skill>/SKILL.md` | Native skill instructions container loaded in Codex environments. |
+
+---
+
+## 📚 Complete Universal Skill Catalog (49 Skills)
 
 Nexora includes **49 battle-tested engineering skill packs**, organized across four functional pillars:
 
@@ -170,7 +201,7 @@ Nexora includes **49 battle-tested engineering skill packs**, organized across f
 ### 4. 🌐 Full-Stack, Optimization & Multi-Agent Orchestration (5 Skills)
 | Skill ID | Category | Description |
 |---|---|---|
-| `token-manager` | Optimization | High-performance AI prompt token governor (Low tokens, High output across Low/Med/High usage). |
+| `token-manager` | Optimization | High-performance AI prompt token governor (Low tokens, High output). |
 | `agent-orchestration-multi-agent-optimize` | AI Agents | Coordinated multi-agent profiling, task routing, and cost-aware orchestration. |
 | `full-stack-orchestration-full-stack-feature` | Full Stack | Coordinated end-to-end implementation across database, API, and UI layers. |
 | `flutter-fix-layout-issues` | Layout | Visual debugger for RenderFlex overflows and unbounded height constraints. |
@@ -186,16 +217,19 @@ Nexora includes **49 battle-tested engineering skill packs**, organized across f
 3. Go to **Skill Library** or **Recommended Skills**.
 4. Click **Add Skill** on any card. Nexora instantly formats and deploys the skill to your project.
 
-### Method B: From the Command Line (CMD, PowerShell, or VS Code)
+### Method B: From the Command Line
 ```bash
 # Add a skill for GitHub Copilot & Codex in VS Code
 nexora skills add flutter-build-responsive-layout --platform copilot
 
-# Add a skill for Cursor IDE / Claude Code
+# Add a skill for Cursor IDE
 nexora skills add backend-architect --platform cursor
 
 # Add a skill for Google Antigravity
 nexora skills add ui_ux_pro_max --platform antigravity
+
+# Add a skill for Claude Code
+nexora skills add api-design-principles --platform claude
 
 # Check which skills are active in your current project
 nexora skills active .
@@ -203,20 +237,6 @@ nexora skills active .
 # Remove a skill cleanly
 nexora skills remove flutter-build-responsive-layout .
 ```
-
----
-
-## 🤖 Multi-Platform AI Target Matrix
-
-Nexora generates native configurations tailored to each AI assistant's standard:
-
-| Platform | Generated File / Format | How the AI Tool Uses It |
-|---|---|---|
-| **Google Antigravity** | `.agents/skills/<skill>/SKILL.md` | Auto-discovered by Antigravity's agent skill system. |
-| **Cursor IDE** | `.cursor/rules/<skill>.mdc` | Evaluated on every prompt and code edit inside Cursor. |
-| **GitHub Copilot & Codex (VS Code)** | `.github/copilot-instructions.md` | Injected inside safe delimiters; followed on every code generation. |
-| **Claude Code** | Project workspace rules | Reads workspace rules and instructions automatically. |
-| **Roo Code & Cline** | `.cursor/rules/` & `.clinerules` | Compatible rules format auto-detected by extensions. |
 
 ---
 
@@ -230,9 +250,10 @@ Nexora is engineered as an **Electron + PowerShell hybrid application**:
 ├──────────────────────────────┬──────────────────────────────┤
 │  DESKTOP UI (Electron)       │  ENGINE RUNTIME (PowerShell) │
 │  • HTML5 / CSS3 / ES Modules │  • Pure native Windows logic │
-│  • Dark Charcoal Foundation  │  • 3-Way SHA-256 Checksums   │
-│  • 3-Way Diff Viewers        │  • Sequential Bulk Executor  │
-│  • Modals & Progress Bars    │  • Quarantine & Rollback     │
+│  • Multi-Theme Engine        │  • 3-Way SHA-256 Checksums   │
+│  • Token Safety Meter        │  • Sequential Bulk Executor  │
+│  • 3-Way Diff Viewers        │  • Quarantine & Rollback     │
+│  • Modals & Progress Bars    │  • 5-Platform Adapters       │
 ├──────────────────────────────┴──────────────────────────────┤
 │               SECURE IPC BRIDGE (stdin / stdout)            │
 │  • Zero direct renderer file access                         │
@@ -240,8 +261,8 @@ Nexora is engineered as an **Electron + PowerShell hybrid application**:
 └─────────────────────────────────────────────────────────────┘
 ```
 
-1. **Frontend (Electron):** Provides a fluid, modern dark-mode GUI with rich side-by-side diffs, modals, and progress bars without requiring any web server.
-2. **Backend Engine (PowerShell):** Runs natively in the background. Because Windows 10/11 includes PowerShell out of the box, Nexora runs with **zero prerequisite installs** (no Python or Node installations required on user machines).
+1. **Frontend (Electron):** Provides a fluid GUI supporting System, Dark, and Light themes with side-by-side diffs, modals, and progress bars without requiring any web server.
+2. **Backend Engine (PowerShell):** Runs natively in the background using built-in Windows PowerShell 5.1+. Zero prerequisite runtimes (no Python or Node installations required on user machines).
 
 ---
 
@@ -265,8 +286,8 @@ To ensure security, quality, and smooth public distribution, Nexora is structure
 ├────────────────────────────────────────┼────────────────────────────────────────┤
 │ • Official public showcase & portal    │ • Proprietary core engine source code  │
 │ • User documentation & feature guides  │ • Electron desktop application source  │
-│ • Public installer bootstrap scripts   │ • Full 48 skill template definitions   │
-│ • Release notes & binary distributions │ • Automated test suites (1,031+ tests) │
+│ • Public installer bootstrap scripts   │ • Full 49 skill template definitions   │
+│ • Release notes & binary distributions │ • Automated test suites (56+ suites)   │
 │ • Public issue reporting & discussions │ • CI/CD build & packaging pipelines    │
 └────────────────────────────────────────┴────────────────────────────────────────┘
 ```
@@ -284,7 +305,7 @@ To ensure security, quality, and smooth public distribution, Nexora is structure
 ## 🤝 Support & Feedback
 
 - **Bug Reports & Feature Requests:** [Open a Public Issue](https://github.com/abhishek01032007-pixel/Nexora/issues)
-- **License:** MIT License
+- **License:** [MIT License](LICENSE)
 
 <p align="center">
   Built with ❤️ for modern AI-assisted software engineers.
