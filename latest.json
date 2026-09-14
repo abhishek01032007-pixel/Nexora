@@ -1,14 +1,14 @@
-{
-    "schemaVersion":  1,
-    "version":  "1.2.0",
-    "product":  "Nexora Skills Manager",
-    "channel":  "stable",
-    "publishedAt":  "2026-09-14T14:47:49Z",
-    "platform":  "win32",
-    "arch":  "x64",
-    "installer":  "https://github.com/abhishek01032007-pixel/Nexora/releases/latest/download/NexoraSkillsManager-Setup.exe",
-    "sha256":  "2fd5d2c91bf6df7bed5029a6e336413a5ba343915fcc107f35a50dbb182d6066",
-    "bootstrapper":  "https://github.com/abhishek01032007-pixel/Nexora/releases/latest/download/NexoraBootstrap.exe",
-    "bootstrapperSha256":  "101186eea38cc5620c16f6ea125d8c5d5a0b73ad356eb3f10b3be054fa3038b6",
-    "releaseNotesUrl":  "https://github.com/abhishek01032007-pixel/Nexora/releases/tag/v1.2.0"
+﻿{
+  "schemaVersion": 1,
+  "version": "1.2.0",
+  "product": "Nexora Skills Manager",
+  "channel": "stable",
+  "publishedAt": "2026-09-14T15:07:30Z",
+  "platform": "win32",
+  "arch": "x64",
+  "installer": "https://github.com/abhishek01032007-pixel/Nexora/releases/latest/download/NexoraSkillsManager-Setup.exe",
+  "sha256": "888cdb6b2f91c058924beade898be1d4d990a266581b3da80171bfc7d3e86612",
+  "bootstrapper": "https://github.com/abhishek01032007-pixel/Nexora/releases/latest/download/NexoraBootstrap.exe",
+  "bootstrapperSha256": "101186eea38cc5620c16f6ea125d8c5d5a0b73ad356eb3f10b3be054fa3038b6",
+  "releaseNotesUrl": "https://github.com/abhishek01032007-pixel/Nexora/releases/tag/v1.2.0"
 }
