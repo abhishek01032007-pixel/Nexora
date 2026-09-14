@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "product": "Nexora Skills Manager",
   "channel": "stable",
-  "publishedAt": "2026-08-29T07:08:17Z",
+  "publishedAt": "2026-09-14T12:00:00Z",
   "platform": "win32",
   "arch": "x64",
   "installer": "https://github.com/abhishek01032007-pixel/Nexora/releases/latest/download/NexoraSkillsManager-Setup.exe",
