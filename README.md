@@ -33,28 +33,32 @@ Instead of writing repetitive prompt instructions or manually configuring rules 
 
 ---
 
-## ⚡ Quick One-Command Setup (Windows x64)
+## 🚀 Download & Quick Setup (Windows 10 / 11 x64)
 
-Install Nexora with a single command that runs out of the box in **any Windows terminal** (**Windows PowerShell**, **Command Prompt (CMD)**, or **VS Code Terminal**):
+Get started with Nexora Skills Manager in seconds. Choose your preferred installation method:
+
+<p align="center">
+  <br>
+  <a href="https://github.com/abhishek01032007-pixel/Nexora/releases/latest/download/NexoraSkillsManager-Setup.exe">
+    <img src="https://img.shields.io/badge/DOWNLOAD%20FOR%20WINDOWS-DIRECT%20EXE%20INSTALLER-22C55E?style=for-the-badge&logo=windows&logoColor=white" alt="Download Nexora Skills Manager for Windows" height="48" />
+  </a>
+  <br>
+  <sub><strong>Single-Click Windows Installer (.exe)</strong> • Fast Download • 100% Non-Elevated (Zero Admin Rights Needed)</sub>
+</p>
+
+---
+
+### ⚡ Or Install via Terminal (One-Command Setup)
+
+For developers who prefer installing directly from PowerShell:
 
 ```powershell
 irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex
 ```
 
-### Windows Command Prompt (CMD):
-```cmd
-powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex"
-```
-
-> 💡 **One command for both PowerShell & CMD:** Automatically verifies system requirements, checks cryptographic SHA-256 integrity, unpacks into `%LOCALAPPDATA%\NexoraSkillsManager`, registers the `nexora` command in your User `PATH`, and launches the Desktop manager.
-
-### 📦 Alternative: Windows Package Manager (WinGet)
-```cmd
-winget install Nexora.NexoraSkillsManager
-```
-
-### 💾 Standalone GUI Installer (.exe)
-Download `NexoraSkillsManager-Setup.exe` directly from the [Official GitHub Releases](https://github.com/abhishek01032007-pixel/Nexora/releases).
+*✔ Automatically validates Windows 10/11 x64 system requirements*  
+*✔ Verifies cryptographic SHA-256 integrity checksums before launch*  
+*✔ Configures the `nexora` CLI in your User `PATH` and launches the desktop app*  
 
 ---
 
