@@ -1,41 +1,214 @@
-# ⚡ Nexora Skills Manager
-
 <p align="center">
+  <br>
   <img src="https://img.shields.io/badge/NEXORA-SKILLS%20MANAGER-0B1020?style=for-the-badge&labelColor=2563EB&color=111827" alt="Nexora Skills Manager" />
 </p>
 
-<p align="center">
-  <strong>Modular AI Agent Skill Orchestration, Desktop Management & 5-Platform Deployment for Windows.</strong>
-</p>
+<h1 align="center">⚡ NEXORA SKILLS MANAGER</h1>
+
+<h3 align="center">Local-first developer skill management, optimization, and multi-platform orchestration for modern AI coding assistants.</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011%20x64-0078D4?style=flat-square" alt="Platform: Windows x64" />
   <img src="https://img.shields.io/badge/Release-v1.2.0-2563EB?style=flat-square" alt="Release: v1.2.0" />
   <img src="https://img.shields.io/badge/Skill%20Pack-v1.1.0-10B981?style=flat-square" alt="Skill Pack: v1.1.0" />
   <img src="https://img.shields.io/badge/Catalog-49%20Skills-6366F1?style=flat-square" alt="Catalog: 49 Skills" />
+  <img src="https://img.shields.io/badge/Platforms-5%20Supported-EC4899?style=flat-square" alt="Platforms: 5 Supported" />
   <img src="https://img.shields.io/badge/CLI-nexora-0F766E?style=flat-square" alt="CLI: nexora" />
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License: MIT" />
   <img src="https://img.shields.io/badge/Architecture-100%25%20Offline%20First-8B5CF6?style=flat-square" alt="Architecture: Offline-First" />
 </p>
 
+<p align="center">
+  <strong>One Setup. Native Desktop Control Cockpit. 5-Platform AI Agent Skill Orchestration. Zero Telemetry.</strong>
+</p>
+
 ---
 
-## 🌟 Overview
+## 🌟 What is Nexora Skills Manager?
 
-**Nexora Skills Manager** is a standalone Windows desktop control center and unified command-line tool (`nexora`) designed to supercharge modern AI coding assistants—including **Google Antigravity**, **Cursor IDE**, **GitHub Copilot**, **Claude Code**, and **OpenAI Codex**.
+Modern AI coding assistants—like **Google Antigravity**, **Cursor IDE**, **GitHub Copilot**, **Claude Code**, and **OpenAI Codex**—are only as capable as the contextual guidance and engineering discipline provided to them. Without structured skills, AI assistants frequently suffer from:
 
-Instead of writing repetitive prompt instructions or manually configuring rules for every new project, Nexora:
-1. **Scans your codebase** locally to discover frameworks, languages, dependencies, and architectural patterns.
-2. **Recommends specialized engineering skills** from a curated library of **49 production skill packs**.
-3. **Deploys native, formatted instruction sets** simultaneously across 5 platforms (`.agents/`, `.cursor/`, `.github/`, `.claude/`, or `.codex/`).
-4. **Governs prompt token consumption** via a dynamic Token Safety Meter with context-window headroom safeguards.
-5. **Manages skill lifecycles, 3-way checksum updates, and atomic rollbacks** safely across all local projects.
+- **Context Amnesia**: Repeating shallow patterns instead of adhering to project-specific architecture.
+- **Verbose Prompt Overhead**: Blowing up context windows and wasting tokens with repeated instructions.
+- **Platform Fragmentation**: Incompatible instruction formats across different editors and CLI agents.
+- **Manual Configuration Drudgery**: Manually copying `.mdc` or `SKILL.md` rules into every new repository.
+
+**Nexora Skills Manager** solves this permanently. It is a high-performance, local-first Windows desktop application and command-line engine (`nexora`) that discovers your codebase stack, recommends battle-tested engineering skills, monitors prompt token budgets, and formats & deploys skills directly into your workspace across **5 major AI platforms with a single click**.
+
+---
+
+## ⚙️ How Nexora Skills Manager Works
+
+Nexora operates completely locally on your machine through a deterministic, 7-step engineering pipeline:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                     NEXORA SKILLS LIFECYCLE WORKFLOW                        │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│   [ 1. Add Workspace ] ───────► Select local repository or project folder   │
+│            │                                                                │
+│            ▼                                                                │
+│   [ 2. Stack Detection ] ─────► Scans marker files (package.json, Cargo,    │
+│            │                    pubspec.yaml, go.mod, etc.) with confidence │
+│            ▼                                                                │
+│   [ 3. Skill Matching ] ──────► Contextual recommendations matched to       │
+│            │                    detected stack across 49 curated skills     │
+│            ▼                                                                │
+│   [ 4. Token Governor ] ──────► Real-time Token Safety Meter calculates     │
+│            │                    headroom to prevent context overflow        │
+│            ▼                                                                │
+│   [ 5. Select Targets ] ──────► Choose target platforms (Antigravity,       │
+│            │                    Cursor, Copilot, Claude, Codex)             │
+│            ▼                                                                │
+│   [ 6. Atomic Injection ] ────► Translates schemas into native formats with │
+│            │                    safe delimiter fences & backup snapshots    │
+│            ▼                                                                │
+│   [ 7. 3-Way Sync & Update ] ─► SHA-256 integrity checks, diff inspection   │
+│                                 and byte-for-byte rollback guarantees       │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### The 7 Core Architectural Pillars
+
+1. **📊 Dashboard**: Real-time project cockpit displaying project health scores, active skill counts, detected stack classification, and Token Safety Governor overview.
+2. **📁 Workspaces**: Comprehensive multi-repository workspace manager. Inspect discovered languages, frameworks, dependencies, and manage deployed skills per workspace.
+3. **👛 Skill Wallet (Store & Importer)**: A searchable repository of **49 canonical engineering skills**. Import custom skills locally or paste any **GitHub repository URL** to automatically discover, inspect, and install community skills.
+4. **🛠️ Skill Studio**: Author and test your own custom AI skills. Includes YAML frontmatter scaffolding, schema validation, parameter templates, and instant preview across all 5 platform formats.
+5. **🤖 Platforms**: Unified target manager. Choose which platforms receive deployed skills: Google Antigravity, Cursor IDE, GitHub Copilot, Claude Code, or OpenAI Codex.
+6. **📜 Activity & Audit Trail**: Chronological immutable log tracking every skill deployment, activation, deactivation, scan, and system update.
+7. **🩺 Maintenance & Doctor**: 6-category diagnostic engine that validates runtime integrity, environment PATH, platform adapters, file permissions, and offers one-click self-healing repair.
+
+---
+
+## 🤖 5-Platform AI Target Matrix
+
+Nexora automatically translates skills into the exact native file format and directory structure required by each AI coding environment:
+
+| AI Platform | Target File Location | Schema / Format | Execution Behavior |
+| :--- | :--- | :--- | :--- |
+| **Google Antigravity** | `.agents/skills/<skill>/SKILL.md` | Standard `SKILL.md` with YAML frontmatter | Loaded on-demand as specialized agent capabilities. |
+| **Cursor IDE** | `.cursor/rules/<skill>.mdc` | MDC structured markdown with YAML metadata | Automatically applied on relevant file patterns and prompts. |
+| **GitHub Copilot** | `.github/copilot-instructions.md` | Delimiter-scoped markdown fences | Injected cleanly without touching custom user instructions. |
+| **Claude Code** | `.claude/skills/<skill>/SKILL.md` | Anthropic skill container with execution guides | Discovered and loaded by the Claude CLI runtime. |
+| **OpenAI Codex** | `.codex/skills/<skill>/SKILL.md` | Codex instructions container with environment rules | Loaded into OpenAI Codex workspaces and dev containers. |
+
+---
+
+## 🛡️ Critical Safety & Engineering Invariants
+
+- **Zero Source Code Mutation**: Nexora strictly edits instruction configuration files inside `.agents/`, `.cursor/`, `.github/`, `.claude/`, or `.codex/`. Your source code is **never modified**.
+- **Delimiter-Safe Injection**: In shared files like `.github/copilot-instructions.md`, Nexora wraps skills inside clear delimiter fences (`<!-- NEXORA:START -->` ... `<!-- NEXORA:END -->`). Existing developer instructions outside the fence remain 100% untouched.
+- **Token Safety Meter**: Dynamic token budget monitoring calculates prompt token consumption and guards against context-window exhaustion.
+- **3-Way Checksum Diff Engine**: When updating skills, Nexora compares base, local-modified, and upstream versions to prevent overwriting local customizations.
+- **Atomic Rollbacks**: Every mutating operation automatically snapshots modified files to `%LOCALAPPDATA%\NexoraSkillsManager\backups\` before writing. If any step fails, changes are restored byte-for-byte.
+- **100% Offline-First & Zero Telemetry**: Codebase analysis, stack detection, and skill generation run completely on your local workstation. Zero analytics, zero telemetry beacons, and zero secret storage.
+
+---
+
+## 📚 The 49 Curated Built-in Engineering Skills
+
+Nexora comes pre-bundled with **49 production-grade engineering skills** designed by veteran software architects:
+
+### 1. 🎨 Frontend, Mobile & UI/UX Engineering (15 Skills)
+
+| Skill ID | Focus Area | Description |
+| :--- | :--- | :--- |
+| `frontend_design` | Design Systems | Production-grade creative web styling, modern color harmonies, micro-animations & distinctive aesthetics. |
+| `frontend-developer` | React & Next.js | Modern React 19, Next.js 15, component hierarchy, accessibility, and client-side state patterns. |
+| `ui_ux_pro_max` | UI/UX Intelligence | Searchable design intelligence database with palettes, font pairings, layout blueprints, and interaction models. |
+| `enhance_ui` | Visual Enhancement | Systematic UI refinement, responsiveness verification, contrast tuning, and layout bug prevention. |
+| `mobile-developer` | Mobile Cross-Platform | React Native and Flutter mobile architectures, offline sync, performance tuning, and app store readiness. |
+| `flutter-build-responsive-layout` | Flutter Layouts | LayoutBuilder, MediaQuery, and Adaptive UI paradigms scaling smoothly from mobile to desktop screens. |
+| `flutter-apply-architecture-best-practices` | Flutter Architecture | Clean layered architecture strictly separating UI, Business Logic, and Data Access layers. |
+| `flutter-setup-declarative-routing` | Flutter Routing | GoRouter declarative URL routing, deep linking, authentication redirection, and state-driven navigation. |
+| `flutter-implement-json-serialization` | Flutter Models | Type-safe JSON serialization with error resilience, immutability, and mapping helpers. |
+| `flutter-setup-localization` | Flutter i18n | Multi-language localization with `intl`, `l10n.yaml`, and RTL layout support. |
+| `flutter-use-http-package` | Flutter Networking | Production-ready HTTP/REST networking with interceptors, retry exponential backoff, and caching. |
+| `flutter-add-widget-preview` | Flutter Prototyping | Interactive component previews and widget sandboxes for rapid isolated UI development. |
+| `flutter-fix-layout-issues` | Flutter Debugging | Surgical fixes for RenderFlex overflows, unbounded constraints, and layout viewport collisions. |
+| `flutter-add-widget-test` | Flutter Testing | Component-level UI verification using WidgetTester for user interactions, gestures, and rendering. |
+| `flutter-add-integration-test` | Flutter E2E | End-to-end device integration testing using Flutter Driver and integration_test suites. |
+
+### 2. ⚙️ Backend, Microservices & Architecture (12 Skills)
+
+| Skill ID | Focus Area | Description |
+| :--- | :--- | :--- |
+| `backend-architect` | Distributed Systems | Scalable API design, microservices boundaries, service mesh patterns, gRPC, resilience, and observability. |
+| `architecture-patterns` | Clean Architecture | Clean Architecture, Hexagonal (Ports & Adapters), and Domain-Driven Design (DDD) domain modeling. |
+| `architect-review` | Design Review | Comprehensive architectural reviews evaluating scalability, fault tolerance, modularity, and cohesion. |
+| `api-design-principles` | API Standards | RESTful and GraphQL API design best practices, versioning, idempotent mutations, and pagination. |
+| `nodejs-backend-patterns` | Node.js Services | Express and Fastify production services with middleware pipelines, structured logging, and error handling. |
+| `backend-security-coder` | Backend Security | Secure backend implementation, input sanitization, SQL/NoSQL injection defense, and OWASP compliance. |
+| `software_architecture` | Architecture Core | Quality-focused software engineering standards, SOLID principles, and low-coupling system design. |
+| `document_api` | Documentation | Automated standardized OpenAPI/Swagger and Markdown documentation generation for endpoints. |
+| `error-handling-patterns` | Resilience | Multi-language error handling, Result types, exception boundaries, and graceful service degradation. |
+| `postgresql-optimization` | Database Tuning | PostgreSQL-specific development: JSONB queries, indexing strategies, full-text search, and EXPLAIN plans. |
+| `supabase-postgres-best-practices` | Supabase & Postgres | Database schema design, Row Level Security (RLS) policies, pgvector search, and migration hygiene. |
+| `full-stack-orchestration-full-stack-feature` | Full Stack Features | Coordinated multi-tier feature implementation across database schemas, APIs, and frontend views. |
+
+### 3. 🧪 QA, Debugging, Testing & Security (12 Skills)
+
+| Skill ID | Focus Area | Description |
+| :--- | :--- | :--- |
+| `debug_issue` | Root Cause Analysis | Strict, scientific debugging protocol (The "Iron Law"): No fixes permitted without proven root cause. |
+| `debugger` | General Debugging | Systematic error diagnostic specialist for test failures, memory leaks, and unexpected runtime behavior. |
+| `test_runner` | Test Orchestration | Automated test execution runner that analyzes failures and provides surgical fix recommendations. |
+| `scaffold_tests` | Test Generation | Generates comprehensive test suites with Happy Path, Edge Case, and Error Condition test stubs. |
+| `e2e-testing-patterns` | E2E Testing | Robust end-to-end browser automation with Playwright and Cypress to eliminate flaky tests. |
+| `code-review-excellence` | Code Review | Constructive, senior-level code review practices catching subtle bugs, security gaps, and antipatterns. |
+| `code_review` | Quality & OWASP | Multi-dimensional code review covering Functionality, OWASP Top 10 Security, and Performance. |
+| `security-auditor` | Security Auditing | DevSecOps security auditor specializing in threat modeling, OAuth2/OIDC, and compliance frameworks. |
+| `security_audit` | Vulnerability Scan | Scans codebase for secrets, injection vulnerabilities, and maintains project SECURITY.md policies. |
+| `accidental-data-loss-prevention` | Data Guard | Pre-flight stop-and-verify guard blocking accidental drops, bucket deletions, or destructive data loss. |
+| `optimize_codebase` | Code Refactoring | Identifies and refactors monolithic code files (>2k lines) into clean, modular, testable components. |
+| `ui-simulation-auditor` | UI Audit | Automated UI simulation validating buttons, back navigation, modal lifecycles, and visual glitches. |
+
+### 4. ☁️ Cloud Storage, BigQuery & Data Engineering (10 Skills)
+
+| Skill ID | Focus Area | Description |
+| :--- | :--- | :--- |
+| `bigquery-sql` | SQL Optimization | High-performance BigQuery SQL optimization, query cost reduction, and partition/clustering design. |
+| `bigquery-ai-ml` | BigQuery ML | Built-in BigQuery machine learning: time-series forecasting, anomaly detection, and GenAI integration. |
+| `bigquery-bigframes` | DataFrames & ML | Python BigQuery DataFrames (BigFrames) for pandas/scikit-learn style workflows over petabyte datasets. |
+| `bigtable-basics` | NoSQL Storage | Bigtable schema design, row key optimization, hotspot elimination, and client library integrations. |
+| `building-data-apps` | Data Dashboards | Modern data applications and interactive visualization UIs using React + Vite and Streamlit. |
+| `data-autocleaning` | Data Quality | Automated data quality, cleaning, and transformation pipelines for Dataform and dbt workflows. |
+| `dbt-bigquery` | dbt Modeling | Production dbt pipeline creation, modular SQL transformations, and incremental models for BigQuery. |
+| `google-cloud-storage-basics` | Cloud Storage | Secure GCS object storage: bucket policies, lifecycle rules, signed URLs, and streaming optimization. |
+| `google-cloud-storage-bucket-architect` | Bucket Architecture | Workload-tuned Cloud Storage bucket design: retention locks, uniform access, and tiering economics. |
+| `schema-mapping` | Schema Mapping | High-fidelity ETL/ELT schema transformations, mapping manifesto generation, and cross-platform sync. |
 
 ---
 
 ## 🚀 Download & Quick Setup (Windows 10 / 11 x64)
 
-Get started with Nexora Skills Manager in seconds. Choose your preferred installation method:
+Nexora Skills Manager is 100% free, open-source, and installs non-elevated (no administrator privileges needed):
+
+### Method 1: The One Setup Link (PowerShell Terminal) ⚡
+
+Open Windows PowerShell (5.1+) and run:
+
+```powershell
+irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex
+```
+
+#### Windows Command Prompt (CMD):
+```cmd
+powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex"
+```
+
+*✔ 100% non-elevated installation (runs in user space)*  
+*✔ Automatic cryptographic SHA-256 integrity verification*  
+*✔ Configures the `nexora` CLI in your User `PATH` and launches the desktop app*  
+*✔ Repository safety: Your local source code and drives remain completely untouched*  
+
+---
+
+### Method 2: Direct Download (Windows Graphical Installer) 🖱️
+
+For developers who prefer a traditional Windows wizard setup:
 
 <p align="center">
   <br>
@@ -46,263 +219,71 @@ Get started with Nexora Skills Manager in seconds. Choose your preferred install
   <sub><strong>Single-Click Windows Installer (.exe)</strong> • Fast Download • 100% Non-Elevated (Zero Admin Rights Needed)</sub>
 </p>
 
+1. **Download:** Click the button above to download `NexoraSkillsManager-Setup.exe`.
+2. **Launch:** Run the executable to open the clean Windows setup wizard.
+3. **Install:** Choose your installation destination and optional desktop shortcuts, then click Install.
+
 ---
 
-### ⚡ Or Install via Terminal (One-Command Setup)
+## 💻 Command Line Interface (`nexora`)
 
-For developers who prefer installing directly from PowerShell:
+Nexora provides a first-class CLI for developers who work in the terminal:
 
 ```powershell
-irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex
-```
+# Open interactive CLI / view status
+nexora
 
-*✔ Automatically validates Windows 10/11 x64 system requirements*  
-*✔ Verifies cryptographic SHA-256 integrity checksums before launch*  
-*✔ Configures the `nexora` CLI in your User `PATH` and launches the desktop app*  
+# View help and available options
+nexora --help
+
+# Display installed version
+nexora --version
+
+# Run full 6-category system health diagnostics
+nexora doctor
+
+# Run doctor with automatic self-healing repair
+nexora doctor --repair
+
+# List all skills available in the catalog
+nexora skills
+
+# Scan and analyze active project tech stack
+nexora scan
+```
 
 ---
 
-## 🎨 Multi-Theme Engine & Visual Design
+## 🎨 Multi-Theme Engine
 
-Nexora Desktop features a responsive interface engineered with a dynamic multi-theme engine:
+Nexora Desktop features a responsive interface engineered with an instant multi-theme engine:
 
 * 🖥️ **System Theme (Auto-Sync)**: Dynamically aligns with your Windows 10/11 system light or dark preference in real-time.
 * ☀️ **White Normal Mode (Daylight Clean)**: Clean daylight background (`#ffffff` / `#f8f9fa`) with deep slate typography (`#0f172a`), crisp contrast borders, and full WCAG AA compliance.
-* 🌘 **Dark Mode (Charcoal Slate)**: Deep charcoal foundation (`#13131b`) with violet accent highlights.
+* 🌘 **Dark Mode (Charcoal)**: Deep charcoal foundation (`#13131b`) with violet accents.
 * ⚡ **Zero-Flash Startup**: Instantaneous theme application before first paint.
-* 🔄 **Top Bar Quick Switcher**: Toggle between System, Dark, and Light themes directly from the header navigation bar.
 
 ---
 
-## 🖥️ The Screen Manager & User Flow
+## 🏛️ Public Distribution vs Private Core Architecture
 
-The **Nexora Screen Manager** provides a visual desktop control center built for engineers who prefer an interactive dashboard alongside their IDE:
+To guarantee the highest levels of security, release stability, and public transparency, Nexora operates under a clean two-tier repository architecture:
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                     NEXORA SCREEN MANAGER WORKFLOW                     │
-├────────────────────────────────────────────────────────────────────────┤
-│                                                                        │
-│   [ 1. Dashboard ] ────> Select or add your project workspace          │
-│         │                                                              │
-│         ▼                                                              │
-│   [ 2. Project Analysis ] ──> Auto-detects frameworks & stack depth    │
-│         │                                                              │
-│         ▼                                                              │
-│   [ 3. Recommendations ] ──> AI-matched skills based on confidence     │
-│         │                                                              │
-│         ▼                                                              │
-│   [ 4. Token Governor ] ───> Monitors token budget & context safety    │
-│         │                                                              │
-│         ▼                                                              │
-│   [ 5. Skill Library ] ───> Browse all 49 skills & toggle activation   │
-│         │                                                              │
-│         ▼                                                              │
-│   [ 6. Platform Target ] ─> Pick Antigravity, Cursor, Copilot, etc.    │
-│         │                                                              │
-│         ▼                                                              │
-│   [ 7. Update Center ] ───> 3-way checksum diffs & safe bulk updates   │
-│                                                                        │
-└────────────────────────────────────────────────────────────────────────┘
-```
-
-### The 15 Integrated Screens & Modules
-
-| Screen / View | Purpose & Capabilities |
-|---|---|
-| **Startup Screen** | Self-healing engine bootstrapper with path and permissions check. |
-| **Dashboard Screen** | Central hub listing registered projects, active skill counts, and update status. |
-| **Add Project Screen** | Quick file-picker to import projects into the manager with instant detection. |
-| **Project Analysis Screen** | Deep scan displaying detected tech stacks, architectural markers, and confidence scores. |
-| **Recommended Skills Screen** | Stack-aware recommendations ranked by project fit with one-click activation. |
-| **Skill Library Screen** | Full searchable catalog of all 49 engineering skills with category filters. |
-| **Skill Detail Screen** | Full inspection of skill markdown, frontmatter, parameters, and platform previews. |
-| **Active Skills Screen** | Manage currently deployed skills for the selected project with Token Safety Meter. |
-| **Platform Selection Screen** | Configure where skills deploy: Antigravity, Cursor, Copilot, Claude, or Codex. |
-| **Cross-Project Usage Screen** | Matrix view showing which skills are shared across different workspaces. |
-| **Update Center Screen** | Unified tabbed center for Application Updates and Skill Updates. |
-| **Skill Update Center View** | Preflight planning, selective bulk updates, and interrupted batch recovery. |
-| **Diff Viewer Modal** | Git-like side-by-side color-coded split diff viewer for 3-way conflict resolution. |
-| **Recent Activity Screen** | Comprehensive audit trail logging every activation, rollback, and update. |
-| **System Health Screen** | Built-in "Doctor" diagnosing runtime integrity, file permissions, and environment. |
+| Repository | Visibility | Role & Purpose |
+| :--- | :---: | :--- |
+| **[Nexora (THIS REPOSITORY)](https://github.com/abhishek01032007-pixel/Nexora)** | 🌐 **Public** | **Public Showcase & Distribution Portal:** Official documentation, verified installer downloads, public issue tracker, security policies, and setup bootstrap scripts. |
+| **[Nexora-Skills-Manager](https://github.com/abhishek01032007-pixel/Nexora-Skills-Manager)** | 🔒 **Private** | **Core Engine & Development Workspace:** Houses the full Electron application, native PowerShell bridge dispatcher, test matrix (1,200+ tests), and CI/CD packaging pipelines. |
 
 ---
 
-## 🤖 Multi-Platform AI Target Matrix (5 Platforms)
+## 📖 Additional Documentation
 
-Nexora automatically generates native configurations tailored to each AI assistant's official standard:
-
-| Platform | Generated File / Format | How the AI Tool Uses It |
-|---|---|---|
-| **Google Antigravity** | `.agents/skills/<skill>/SKILL.md` | Auto-discovered by Antigravity's agent skill system. |
-| **Cursor IDE** | `.cursor/rules/<skill>.mdc` | Evaluated on every prompt and code edit inside Cursor. |
-| **GitHub Copilot** | `.github/copilot-instructions.md` | Injected inside safe delimiter fences; followed on code generation. |
-| **Claude Code** | `.claude/skills/<skill>/SKILL.md` | Anthropic native skill container auto-loaded by Claude CLI. |
-| **OpenAI Codex** | `.codex/skills/<skill>/SKILL.md` | Native skill instructions container loaded in Codex environments. |
-
----
-
-## 📚 Complete Universal Skill Catalog (49 Skills)
-
-Nexora includes **49 battle-tested engineering skill packs**, organized across four functional pillars:
-
-### 1. 🎨 Frontend, Mobile & UI/UX (13 Skills)
-| Skill ID | Category | Description |
-|---|---|---|
-| `frontend-developer` | Frontend | React 19, Next.js 15, responsive component architecture & accessibility. |
-| `frontend_design` | Frontend | Production-grade creative web styling, animations & distinctive interfaces. |
-| `ui_ux_pro_max` | UI/UX | Comprehensive design intelligence database of palettes, typography & patterns. |
-| `enhance_ui` | UI/UX | Systematic UI enhancement, responsiveness verification & design audits. |
-| `web_performance_optimization` | Performance | Core Web Vitals, bundle-size reduction, asset optimization & caching. |
-| `mobile-developer` | Mobile | Modern cross-platform mobile patterns (Flutter & React Native). |
-| `flutter-build-responsive-layout` | Flutter | LayoutBuilder, MediaQuery, and Adaptive UI for phone, tablet, and desktop. |
-| `flutter-apply-architecture-best-practices` | Flutter | Clean layered architecture separating UI, Logic, and Data layers. |
-| `flutter-setup-declarative-routing` | Flutter | Advanced GoRouter declarative navigation, URL schemes & deep links. |
-| `flutter-implement-json-serialization` | Flutter | JSON mapping models with robust error handling and type safety. |
-| `flutter-setup-localization` | Flutter | Multi-language localization with `intl` and `l10n` configuration. |
-| `flutter-use-http-package` | Flutter | Production-ready REST API integration with interceptors and retry policies. |
-| `flutter-add-widget-preview` | Flutter | Interactive widget previews and component sandbox testing. |
-
-### 2. ⚙️ Backend, Microservices & Architecture (15 Skills)
-| Skill ID | Category | Description |
-|---|---|---|
-| `backend-architect` | Architecture | Scalable API design, microservices boundaries, gRPC, and resilience patterns. |
-| `architecture-patterns` | Architecture | Clean Architecture, Hexagonal Architecture, and Domain-Driven Design (DDD). |
-| `api-design-principles` | Backend | RESTful and GraphQL API design best practices for scalable developer platforms. |
-| `auth-implementation-patterns` | Security | OAuth2, OIDC, JWT lifecycle, RBAC, and secure token storage. |
-| `backend-security-coder` | Security | Secure backend implementation, input sanitization, and OWASP defense. |
-| `cqrs-implementation` | Architecture | Command Query Responsibility Segregation with separated read/write stores. |
-| `event-store-design` | Architecture | Event-driven event sourcing, immutable append-only logs & stream partitioning. |
-| `microservices-patterns` | Architecture | Service mesh, API gateways, circuit breakers, and distributed tracing. |
-| `projection-patterns` | Backend | Real-time and async read-model projections from event streams. |
-| `saga-orchestration` | Architecture | Distributed saga patterns with compensating transactions. |
-| `sql-optimization-patterns` | Database | Query optimization, indexing strategies, schema tuning, and EXPLAIN plans. |
-| `workflow-orchestration-patterns` | Backend | Resilient background job processing and distributed workflow engines. |
-| `nodejs-backend-patterns` | Node.js | Express and Fastify production services with middleware pipelines. |
-| `fastapi-templates` | Python | High-speed asynchronous REST APIs using FastAPI, Pydantic, and SQLAlchemy. |
-| `async-python-patterns` | Python | Concurrency, asyncio event loops, background workers, and threadpools. |
-
-### 3. 🧪 QA, Debugging, Testing & Security (16 Skills)
-| Skill ID | Category | Description |
-|---|---|---|
-| `code_review` | Code Quality | Senior-level code reviews across Functionality, OWASP Security, and Performance. |
-| `architect-review` | Architecture | System design review for architectural integrity, maintainability, and scale. |
-| `debug_issue` | Debugging | Scientific root-cause debugging protocol (The "Iron Law"). |
-| `e2e-testing-patterns` | Testing | Reliable end-to-end test automation with Playwright and Cypress. |
-| `scaffold_tests` | Testing | Automated unit and regression test scaffolding (Happy Path, Edge, Error). |
-| `test_runner` | Testing | Test execution orchestrator with automatic failure analysis and fixes. |
-| `security_audit` | Security | OWASP Top 10 vulnerability scanner and SECURITY.md management. |
-| `optimize_codebase` | Refactoring | Refactors monolithic files (>2k lines) into modular, high-performance units. |
-| `document_api` | Documentation | Standardized OpenAPI / Markdown documentation generators. |
-| `dart-add-unit-test` | Testing | Unit and logic testing for Dart classes using `package:test`. |
-| `dart-generate-test-mocks` | Testing | Dependency mocking using Mockito and `build_runner`. |
-| `dart-run-static-analysis` | Quality | Static analysis and mechanical linting via `dart analyze` and `dart fix`. |
-| `dart-fix-runtime-errors` | Debugging | Active stack trace diagnosis and hot-reload fix verification. |
-| `dart-resolve-package-conflicts` | Maintenance | Automated dependency resolution for pub package version conflicts. |
-| `flutter-add-widget-test` | Testing | Component-level UI testing via WidgetTester. |
-| `flutter-add-integration-test` | Testing | End-to-end device testing using Flutter Driver and integration tests. |
-
-### 4. 🌐 Full-Stack, Optimization & Multi-Agent Orchestration (5 Skills)
-| Skill ID | Category | Description |
-|---|---|---|
-| `token-manager` | Optimization | High-performance AI prompt token governor (Low tokens, High output). |
-| `agent-orchestration-multi-agent-optimize` | AI Agents | Coordinated multi-agent profiling, task routing, and cost-aware orchestration. |
-| `full-stack-orchestration-full-stack-feature` | Full Stack | Coordinated end-to-end implementation across database, API, and UI layers. |
-| `flutter-fix-layout-issues` | Layout | Visual debugger for RenderFlex overflows and unbounded height constraints. |
-| `error-handling-patterns` | Resilience | Multi-language error handling, Result types, and graceful degradation. |
-
----
-
-## 🛠️ How to Add & Activate Skills
-
-### Method A: From the Desktop Screen Manager
-1. Launch Nexora by clicking the Desktop icon or typing `nexora` in any terminal.
-2. Select your project from the **Dashboard**.
-3. Go to **Skill Library** or **Recommended Skills**.
-4. Click **Add Skill** on any card. Nexora instantly formats and deploys the skill to your project.
-
-### Method B: From the Command Line
-```bash
-# Add a skill for GitHub Copilot & Codex in VS Code
-nexora skills add flutter-build-responsive-layout --platform copilot
-
-# Add a skill for Cursor IDE
-nexora skills add backend-architect --platform cursor
-
-# Add a skill for Google Antigravity
-nexora skills add ui_ux_pro_max --platform antigravity
-
-# Add a skill for Claude Code
-nexora skills add api-design-principles --platform claude
-
-# Check which skills are active in your current project
-nexora skills active .
-
-# Remove a skill cleanly
-nexora skills remove flutter-build-responsive-layout .
-```
-
----
-
-## 🏗️ System Architecture: Dual-Tier Engine
-
-Nexora is engineered as an **Electron + PowerShell hybrid application**:
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    NEXORA ARCHITECTURE                      │
-├──────────────────────────────┬──────────────────────────────┤
-│  DESKTOP UI (Electron)       │  ENGINE RUNTIME (PowerShell) │
-│  • HTML5 / CSS3 / ES Modules │  • Pure native Windows logic │
-│  • Multi-Theme Engine        │  • 3-Way SHA-256 Checksums   │
-│  • Token Safety Meter        │  • Sequential Bulk Executor  │
-│  • 3-Way Diff Viewers        │  • Quarantine & Rollback     │
-│  • Modals & Progress Bars    │  • 5-Platform Adapters       │
-├──────────────────────────────┴──────────────────────────────┤
-│               SECURE IPC BRIDGE (stdin / stdout)            │
-│  • Zero direct renderer file access                         │
-│  • Input sanitization & Concurrency Mutex Locks             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-1. **Frontend (Electron):** Provides a fluid GUI supporting System, Dark, and Light themes with side-by-side diffs, modals, and progress bars without requiring any web server.
-2. **Backend Engine (PowerShell):** Runs natively in the background using built-in Windows PowerShell 5.1+. Zero prerequisite runtimes (no Python or Node installations required on user machines).
-
----
-
-## 🛡️ Privacy & Local-First Security
-
-- **100% Local Processing:** Codebase analysis, stack detection, and skill generation run completely on your local device. Your proprietary code is never sent to the cloud.
-- **Zero Usage Tracking:** Nexora contains no analytics, telemetry beacons, or user tracking.
-- **Delimiter-Safe Multi-Platform Injection:** When editing shared files (like `.github/copilot-instructions.md`), Nexora strictly isolates its managed block. Existing developer instructions outside the block are completely untouched.
-- **Automatic Backups:** Every update or replacement automatically snapshots current files to `%LOCALAPPDATA%\NexoraSkillsManager\backups\` before making any modifications.
-
----
-
-## 📌 Repository Structure & Governance
-
-To ensure security, quality, and smooth public distribution, Nexora is structured across two distinct repositories:
-
-```
-┌────────────────────────────────────────┬────────────────────────────────────────┐
-│   PUBLIC SHOWCASE & DISTRIBUTION REPO  │    PRIVATE CORE ENGINE REPOSITORY      │
-│   (https://github.com/.../Nexora)      │    (https://github.com/.../Skills-Mgr) │
-├────────────────────────────────────────┼────────────────────────────────────────┤
-│ • Official public showcase & portal    │ • Proprietary core engine source code  │
-│ • User documentation & feature guides  │ • Electron desktop application source  │
-│ • Public installer bootstrap scripts   │ • Full 49 skill template definitions   │
-│ • Release notes & binary distributions │ • Automated test suites (56+ suites)   │
-│ • Public issue reporting & discussions │ • CI/CD build & packaging pipelines    │
-└────────────────────────────────────────┴────────────────────────────────────────┘
-```
-
-| Repository | Visibility | Role & Description |
-|---|---|---|
-| **[Nexora (THIS REPOSITORY)](https://github.com/abhishek01032007-pixel/Nexora)** | 🌐 **Public** | **Showcase, Documentation & Distribution Portal:** Designed for developers and users to explore capabilities, read documentation, download verified installers, and report issues. |
-| **[Nexora-Skills-Manager](https://github.com/abhishek01032007-pixel/Nexora-Skills-Manager)** | 🔒 **Private** | **Fully Controlled Core Engine Repository:** Houses the proprietary engine source, Electron application shell, test suites, and internal release pipelines. |
-
-> 🔑 **Requesting Contributor / Team Access to Private Repository:**  
-> Access to the private core engine is restricted to authorized team members, enterprise partners, and approved core contributors. To request access, please submit an inquiry via [GitHub Repository Access](https://github.com/abhishek01032007-pixel/Nexora-Skills-Manager) or reach out through our [Public Issue Tracker](https://github.com/abhishek01032007-pixel/Nexora/issues).
+- 🚀 [Installation Guide](docs/installation.md)
+- 🔒 [Privacy & Local-First Security](docs/privacy.md)
+- 💻 [System Requirements](docs/system-requirements.md)
+- 🔄 [Update & Rollback Engine](docs/updates.md)
+- 🛡️ [Security Policy](SECURITY.md)
+- 📜 [MIT License](LICENSE)
 
 ---
 
