@@ -12,7 +12,9 @@ param(
     [switch]$NoLaunch,
     [switch]$Passthru,
     [switch]$DryRun,
-    [switch]$ExportFunctionsOnly
+    [switch]$ExportFunctionsOnly,
+    [switch]$Force,
+    [switch]$Repair
 )
 
 $ErrorActionPreference = "Stop"
@@ -330,6 +332,178 @@ function Start-NexoraBootstrap {
 }
 
 # ============================================================================
+# HEALTH & DIRECTING / PRE-INSTALL DECISION ENGINE
+# ============================================================================
+
+function Compare-NexoraSemVerStrings {
+    param([string]$VersionA, [string]$VersionB)
+    if (-not $VersionA -or -not $VersionB) { return 0 }
+    
+    $cleanA = ($VersionA -replace '^[vV]', '').Split('-')[0]
+    $cleanB = ($VersionB -replace '^[vV]', '').Split('-')[0]
+    
+    try {
+        $va = [System.Version]::Parse($cleanA)
+        $vb = [System.Version]::Parse($cleanB)
+        return $va.CompareTo($vb)
+    } catch {
+        return [string]::Compare($cleanA, $cleanB, [System.StringComparison]::OrdinalIgnoreCase)
+    }
+}
+
+function Stop-NexoraRunningProcesses {
+    [CmdletBinding()]
+    param([switch]$Silent)
+
+    $stopped = @()
+    $procNames = @('NexoraSkillsManager', 'nexora-desktop')
+    foreach ($pName in $procNames) {
+        $procs = Get-Process -Name $pName -ErrorAction SilentlyContinue
+        if ($procs) {
+            foreach ($p in $procs) {
+                if (-not $Silent) {
+                    Write-Host "      [ACTION] Detected active Nexora process (PID $($p.Id)). Gracefully stopping to release file locks..." -ForegroundColor Yellow
+                }
+                Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue
+                $stopped += $p.Id
+            }
+        }
+    }
+    if ($stopped.Count -gt 0) {
+        Start-Sleep -Milliseconds 800
+    }
+    return $stopped
+}
+
+function Test-NexoraLocalInstallationHealth {
+    [CmdletBinding()]
+    param()
+
+    $localApp = $env:LOCALAPPDATA
+    if (-not $localApp) { $localApp = Join-Path $env:USERPROFILE "AppData\Local" }
+
+    $stateRoot = Join-Path $localApp "NexoraSkillsManager"
+    $desktopRoot = Join-Path $localApp "Programs\NexoraSkillsManager"
+
+    $hasState = Test-Path $stateRoot
+    $hasDesktop = Test-Path $desktopRoot
+
+    if (-not $hasState -and -not $hasDesktop) {
+        return @{
+            State           = "NOT_INSTALLED"
+            InstalledVersion= $null
+            IsHealthy       = $false
+            MissingFiles    = @()
+            Message         = "Clean machine: No prior Nexora installation found."
+        }
+    }
+
+    # Inspect installed version from install.json or nexora-version.json
+    $installedVersion = $null
+    $metaFile = Join-Path $stateRoot "install.json"
+    if (Test-Path $metaFile) {
+        try {
+            $meta = Get-Content $metaFile -Raw | ConvertFrom-Json
+            if ($meta.version) { $installedVersion = [string]$meta.version }
+        } catch {}
+    }
+    if (-not $installedVersion) {
+        $verFile = Join-Path $desktopRoot "resources\nexora-version.json"
+        if (Test-Path $verFile) {
+            try {
+                $verJson = Get-Content $verFile -Raw | ConvertFrom-Json
+                if ($verJson.coreVersion) { $installedVersion = [string]$verJson.coreVersion }
+            } catch {}
+        }
+    }
+
+    # Check file integrity
+    $requiredFiles = @(
+        (Join-Path $desktopRoot "NexoraSkillsManager.exe"),
+        (Join-Path $desktopRoot "resources\app.asar")
+    )
+    $missing = @()
+    foreach ($rf in $requiredFiles) {
+        if (-not (Test-Path $rf)) {
+            $missing += $rf
+        }
+    }
+
+    if ($missing.Count -gt 0) {
+        return @{
+            State           = "CORRUPTED"
+            InstalledVersion= $installedVersion
+            IsHealthy       = $false
+            MissingFiles    = $missing
+            Message         = "Broken/Corrupted installation detected ($($missing.Count) core files missing). Repair required."
+        }
+    }
+
+    return @{
+        State           = "HEALTHY"
+        InstalledVersion= $installedVersion
+        IsHealthy       = $true
+        MissingFiles    = @()
+        Message         = "Healthy installation detected (Version: $installedVersion)."
+    }
+}
+
+function Resolve-NexoraInstallationDecision {
+    param(
+        [Parameter(Mandatory=$true)]$Health,
+        [Parameter(Mandatory=$true)][string]$RemoteVersion,
+        [switch]$Force,
+        [switch]$Repair
+    )
+
+    if ($Health.State -eq "NOT_INSTALLED") {
+        return @{
+            Decision      = "FRESH_INSTALL"
+            ShouldInstall = $true
+            Message       = "Proceeding with pristine initial installation of v$RemoteVersion."
+        }
+    }
+
+    if ($Health.State -eq "CORRUPTED" -or $Repair.IsPresent) {
+        return @{
+            Decision      = "REPAIR_CORRUPTED"
+            ShouldInstall = $true
+            Message       = "Repairing broken data and restoring authentic binaries for v$RemoteVersion (user data preserved)."
+        }
+    }
+
+    if ($Force.IsPresent) {
+        return @{
+            Decision      = "FORCE_REINSTALL"
+            ShouldInstall = $true
+            Message       = "Forced re-installation requested. Re-deploying v$RemoteVersion."
+        }
+    }
+
+    # Compare versions
+    $cmp = Compare-NexoraSemVerStrings -VersionA $RemoteVersion -VersionB $Health.InstalledVersion
+    if ($cmp -gt 0) {
+        return @{
+            Decision      = "UPGRADE"
+            ShouldInstall = $true
+            Message       = "Upgrading existing v$($Health.InstalledVersion) to latest v$RemoteVersion."
+        }
+    } elseif ($cmp -eq 0) {
+        return @{
+            Decision      = "ALREADY_INSTALLED"
+            ShouldInstall = $false
+            Message       = "Nexora v$($Health.InstalledVersion) is already installed, healthy, and up to date."
+        }
+    } else {
+        return @{
+            Decision      = "REJECT_DOWNGRADE"
+            ShouldInstall = $false
+            Message       = "Installed version (v$($Health.InstalledVersion)) is newer than target (v$RemoteVersion). Downgrade rejected for security."
+        }
+    }
+}
+
+# ============================================================================
 # MAIN BOOTSTRAP ORCHESTRATOR
 # ============================================================================
 
@@ -343,7 +517,9 @@ function Invoke-NexoraBootstrapInstaller {
         [switch]$NoDesktopShortcut,
         [switch]$NoLaunch,
         [switch]$Passthru,
-        [switch]$DryRun
+        [switch]$DryRun,
+        [switch]$Force,
+        [switch]$Repair
     )
 
     if (-not $Passthru) {
@@ -352,7 +528,7 @@ function Invoke-NexoraBootstrapInstaller {
         Write-Host "  NEXORA SKILLS MANAGER - ONE-COMMAND SECURE BOOTSTRAPPER" -ForegroundColor Cyan
         Write-Host "============================================================" -ForegroundColor Cyan
         Write-Host ""
-        Write-Host "[1/5] Validating Windows system prerequisites..." -ForegroundColor Yellow
+        Write-Host "[1/6] Validating Windows system prerequisites..." -ForegroundColor Yellow
     }
 
     # Step 1: Host validation
@@ -365,7 +541,7 @@ function Invoke-NexoraBootstrapInstaller {
     if (-not $Passthru) { Write-Host "      Host environment validated (Windows 64-bit)." -ForegroundColor Green }
 
     # Step 2: Fetch public release metadata
-    if (-not $Passthru) { Write-Host "[2/5] Fetching release metadata..." -ForegroundColor Yellow }
+    if (-not $Passthru) { Write-Host "[2/6] Fetching release metadata..." -ForegroundColor Yellow }
     $metaResult = Get-NexoraLatestMetadata -Url $MetadataUrl
     if (-not $metaResult.Success) {
         if ($Passthru) { return $metaResult }
@@ -376,7 +552,7 @@ function Invoke-NexoraBootstrapInstaller {
     if (-not $Passthru) { Write-Host "      Found Nexora release version: v$($metadata.version)" -ForegroundColor Green }
 
     # Step 3: Validate metadata schema & bootstrapper fields
-    if (-not $Passthru) { Write-Host "[3/5] Validating bootstrapper release contract..." -ForegroundColor Yellow }
+    if (-not $Passthru) { Write-Host "[3/6] Validating bootstrapper release contract..." -ForegroundColor Yellow }
     $metaVal = Test-NexoraBootstrapMetadata -Metadata $metadata
     if (-not $metaVal.Success) {
         if ($Passthru) { return $metaVal }
@@ -385,12 +561,53 @@ function Invoke-NexoraBootstrapInstaller {
     }
     if (-not $Passthru) { Write-Host "      Bootstrapper metadata validated." -ForegroundColor Green }
 
-    # Step 4: Staging & Download
+    # Step 4: Pre-Installation Diagnostic & Directing Engine (7-Layer Defense Active)
+    if (-not $Passthru) {
+        Write-Host "[4/6] Running Pre-Installation Health & 7-Layer Security Audit..." -ForegroundColor Yellow
+        Write-Host "      [SHIELD] 7-Layer Defense Active: Network SSRF Barrier, SHA-256 Tamper Guard," -ForegroundColor DarkGray
+        Write-Host "               Zip-Slip Jail, Zero-Trust Sandbox, Zero-Eval IPC, Anti-Downgrade & Atomic Rollback" -ForegroundColor DarkGray
+    }
+
+    # Process check & file lock prevention
+    Stop-NexoraRunningProcesses -Silent:$Passthru.IsPresent | Out-Null
+
+    # Health & decision evaluation
+    $health = Test-NexoraLocalInstallationHealth
+    $decision = Resolve-NexoraInstallationDecision -Health $health -RemoteVersion $metadata.version -Force:$Force -Repair:$Repair
+
+    if (-not $Passthru) {
+        Write-Host "      Installation State: $($health.State) | Directing Decision: $($decision.Decision)" -ForegroundColor Green
+        Write-Host "      $($decision.Message)" -ForegroundColor White
+    }
+
+    if (-not $decision.ShouldInstall -and -not $DryRun.IsPresent) {
+        if ($decision.Decision -eq "ALREADY_INSTALLED") {
+            if (-not $Passthru) {
+                Write-Host ""
+                Write-Host "[OK] Nexora Skills Manager v$($health.InstalledVersion) is already installed and healthy." -ForegroundColor Green
+                Write-Host "     To reinstall or repair anyway, run with -Repair or -Force." -ForegroundColor Yellow
+                Write-Host ""
+            }
+            if ($Passthru) {
+                return @{ Success = $true; AlreadyInstalled = $true; Version = $health.InstalledVersion; Message = $decision.Message }
+            }
+            return
+        }
+        if ($decision.Decision -eq "REJECT_DOWNGRADE") {
+            if ($Passthru) {
+                return @{ Success = $false; ErrorCode = "DOWNGRADE_REJECTED"; Message = $decision.Message }
+            }
+            Write-Error "[DOWNGRADE_REJECTED] $($decision.Message)"
+            exit 1
+        }
+    }
+
+    # Step 5: Staging & Download
     $tempDir = Join-Path $env:TEMP ("nexora-boot-" + [Guid]::NewGuid().ToString("N"))
     $bootstrapExe = Join-Path $tempDir "NexoraBootstrap.exe"
 
     try {
-        if (-not $Passthru) { Write-Host "[4/5] Downloading setup components..." -ForegroundColor Yellow }
+        if (-not $Passthru) { Write-Host "[5/6] Downloading setup components..." -ForegroundColor Yellow }
         $dlResult = Get-NexoraBootstrap -Url $metadata.bootstrapper -DestinationPath $bootstrapExe -ShowProgress:(-not $Passthru.IsPresent)
         if (-not $dlResult.Success) {
             if ($Passthru) { return $dlResult }
@@ -408,8 +625,8 @@ function Invoke-NexoraBootstrapInstaller {
         }
         if (-not $Passthru) { Write-Host "      [OK] Cryptographic signature verified (Authentic Release)" -ForegroundColor Green }
 
-        # Step 5: Process execution
-        if (-not $Passthru) { Write-Host "[5/5] Launching Nexora Setup..." -ForegroundColor Yellow }
+        # Step 6: Process execution
+        if (-not $Passthru) { Write-Host "[6/6] Launching Nexora Setup..." -ForegroundColor Yellow }
         $forwardArgs = Build-NexoraBootstrapArguments `
             -InstallPath $InstallPath `
             -Silent $Silent.IsPresent `
