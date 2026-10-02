@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="assets/branding/NexoraSkillsManager-1024.png" width="120" height="120" alt="Nexora Skills Manager Logo" style="border-radius: 26px; box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);" />
+  <a href="https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/assets/branding/NexoraSkillsManager-1024.png" target="_blank" title="Nexora Skills Manager Logo">
+    <img src="assets/branding/NexoraSkillsManager-1024.png" width="120" height="120" alt="Nexora Skills Manager Logo" style="border-radius: 26px; box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);" />
+  </a>
 </p>
 
 <h1 align="center">Nexora Skills Manager</h1>
@@ -134,43 +136,43 @@ Write your instructions once in clean markdown; Nexora automatically transpiles 
 
 ---
 
-## 🚀 How to Use & Bundle Authoring Guide
+## 🚀 How to Use & Workflow Guide
 
-### The 4-Step User Journey
+### 🗺️ 4-Step User Journey Map
 
 ```mermaid
 flowchart LR
-    classDef step fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#fff;
+    classDef step fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#fff;
 
-    S1["1️⃣ Connect Workspace\n(Auto-detects tech stack)"]:::step --> S2["2️⃣ Skill Studio\n(Browse store or author)"]:::step
-    S2 --> S3["3️⃣ Skill Wallet\n(Manage vault & bundles)"]:::step
-    S3 --> S4["4️⃣ Audit & Deploy\n(Token check & fleet sync)"]:::step
+    S1["1️⃣ Connect Workspace\n• Auto-detect tech stack\n• Initialize AI targets"]:::step --> S2["2️⃣ Skill Studio\n• Browse The Store\n• Author custom skills"]:::step
+    S2 --> S3["3️⃣ Skill Wallet\n• Manage Vault & Bundles\n• Token Headroom Check"]:::step
+    S3 --> S4["4️⃣ Fleet Deploy\n• 1-Click Multi-IDE Sync\n• 100% Atomic Commit"]:::step
 ```
 
-1. **Connect Workspace:** Select your project folder. Nexora scans repository dependencies and initializes active AI targets.
-2. **Skill Studio:** Browse pre-verified skills in **The Store**, author custom skills in the built-in editor, or import external Git repositories.
-3. **Skill Wallet:** Organize your skills into **Custom Bundles** with custom rule overrides.
-4. **Audit & Deploy:** Check cumulative token headroom, then click **Apply** to synchronize across all 5 AI targets in sub-second time.
+1. **Connect Workspace:** Select your project folder. Nexora automatically analyzes dependencies and activates target IDE adapters (`.agents/skills`, `.cursor/rules`, `.github`, `.claude`, `.codex`).
+2. **Skill Studio:** Browse pre-verified skills in **The Store**, author custom instructions with the built-in editor, or import external Git repositories.
+3. **Skill Wallet:** Organize downloaded skills into **Custom Bundles** and customize per-stack rule overrides while the Token Governor monitors context limits.
+4. **Fleet Deploy:** Audit token budgets, then click **Apply** to synchronize your skills across all 5 AI targets in sub-second time.
 
 ---
 
-### 🛠️ Step-by-Step: How to Author & Deploy a Custom Bundle
+### 🛠️ Custom Bundle Lifecycle Map
 
 ```mermaid
 flowchart LR
     classDef input fill:#111827,stroke:#6366f1,stroke-width:2px,color:#fff;
-    classDef editor fill:#0f766e,stroke:#2dd4bf,stroke-width:2px,color:#fff;
-    classDef bundle fill:#701a75,stroke:#f472b6,stroke-width:2px,color:#fff;
-    classDef target fill:#1e3a8a,stroke:#38bdf8,stroke-width:2px,color:#fff;
+    classDef editor fill:#042f2e,stroke:#10b981,stroke-width:2px,color:#fff;
+    classDef bundle fill:#3b0764,stroke:#c084fc,stroke-width:2px,color:#fff;
+    classDef target fill:#082f49,stroke:#38bdf8,stroke-width:2px,color:#fff;
 
-    A["🎒 Select Skills from\nStore or Downloads"]:::input --> B["⚙️ Open Bundle Editor\n(Set Name, Tags & Scope)"]:::editor
-    B --> C["📦 Saved Bundle Pack\n(User Custom or Official)"]:::bundle
-    C --> D["🚀 1-Click Fleet Deploy\n(Write to All Workspaces)"]:::target
+    A["🎒 Select Skills\n(Store or Vault)"]:::input --> B["⚙️ Open Bundle Editor\n(Set Name & Overrides)"]:::editor
+    B --> C["📦 Saved Bundle Pack\n(Custom or Official)"]:::bundle
+    C --> D["🚀 1-Click Fleet Deploy\n(All 5 Targets Synced)"]:::target
 ```
 
 1. **Open Skill Wallet:** Click **Skill Wallet** in the primary navigation sidebar.
-2. **Click "New Custom Bundle":** Enter a descriptive name (e.g., `Full-Stack Security Stack` or `Python Microservices Suite`).
-3. **Select Included Skills:** Check the skills you want to group from **My Downloads** or **The Store**. The Token Governor dynamically calculates cumulative weight.
+2. **Click "New Custom Bundle":** Enter a descriptive name (e.g., `Full-Stack Web Suite` or `Security Hardened Pack`).
+3. **Select Included Skills:** Pick desired skills from **My Downloads** or **The Store**. The Token Governor dynamically calculates cumulative weight.
 4. **Save & Set Overrides:** Save the bundle locally. You can customize per-bundle instructions or fork pre-configured official bundles.
 5. **1-Click Apply to Workspace:** Click **`Apply Bundle to Workspace`** to compile and write the entire stack across your project in one transactional commit.
 
@@ -206,7 +208,13 @@ Nexora connects to an expanding library of **30+ official pre-verified skills** 
 ## 📊 5-Platform Benchmark Trajectory Graph
 
 <p align="center">
-  <img src="assets/benchmark_trajectory.png" alt="5-Platform Multi-IDE Setup & Maintenance Trajectory" width="950" />
+  <a href="https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/assets/benchmark_trajectory.png" target="_blank" title="Click to view full-resolution benchmark trajectory graph">
+    <img src="assets/benchmark_trajectory.png" alt="5-Platform Multi-IDE Setup & Maintenance Trajectory" width="950" />
+  </a>
+</p>
+
+<p align="center">
+  <sub>🔍 <i>Click image above to view full-resolution interactive graphic in popup window</i></sub>
 </p>
 
 ### 5-Platform Quantitative Metric Matrix
