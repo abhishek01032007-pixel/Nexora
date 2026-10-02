@@ -15,7 +15,7 @@
   <a href="#-installation-options--strictly-2-choices"><img src="https://img.shields.io/badge/Download-Windows%2010%20%7C%2011%20x64-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Download for Windows" /></a>
   <a href="https://github.com/abhishek01032007-pixel/Nexora/releases/latest"><img src="https://img.shields.io/badge/Release-v1.2.0%20Latest-0A84FF?style=for-the-badge&logo=github&logoColor=white" alt="Latest Release" /></a>
   <a href="#choice-2-one-command-automated-setup"><img src="https://img.shields.io/badge/Runtime-PowerShell%205.1%2B%20Native-5391FE?style=for-the-badge&logo=powershell&logoColor=white" alt="PowerShell Native" /></a>
-  <a href="#5--batch-update-center--100-atomic-rollbacks"><img src="https://img.shields.io/badge/Safety-100%25%20Atomic%20Rollback-10B981?style=for-the-badge&logo=shield&logoColor=white" alt="Atomic Rollback" /></a>
+  <a href="#-100-byte-for-byte-atomic-rollback-engine"><img src="https://img.shields.io/badge/Safety-100%25%20Atomic%20Rollback-10B981?style=for-the-badge&logo=shield&logoColor=white" alt="Atomic Rollback" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-F59E0B?style=for-the-badge" alt="License MIT" /></a>
 </p>
 
@@ -23,14 +23,14 @@
 
 ## 💡 What is Nexora Skills Manager?
 
-Engineering AI agents across multiple modern code editors has created a severe configuration fragmentation crisis:
+Modern software engineering with AI agents has led to a severe **configuration fragmentation crisis**:
 * **Google Antigravity** parses `.agents/skills/<skill>/SKILL.md` with strict YAML frontmatter.
 * **Cursor IDE** parses `.cursor/rules/<skill>.mdc` with glob filters and description headers.
 * **GitHub Copilot** relies on delimited markdown sections in `.github/copilot-instructions.md`.
 * **Claude Code** manages isolated skill files in `.claude/skills/<skill>/SKILL.md`.
 * **OpenAI Codex** executes tool rules from `.codex/skills/<skill>/SKILL.md`.
 
-Whenever you update a prompt rule, fix an instruction, or add an engineering skill, you are forced to manually copy-paste, reformat, and synchronize across every repository and editor.
+Whenever you update a prompt rule, fix a coding standard, or add an engineering skill, you are forced to manually copy-paste, reformat, and synchronize across every repository and editor. If you edit one, the others drift out of date immediately.
 
 **Nexora Skills Manager eliminates this fragmentation.** It provides a native, beautiful Windows desktop application where you discover, author, bundle, and maintain AI agent skills in one central vault—and compile them simultaneously into all 5 IDE target formats with a single click.
 
@@ -81,64 +81,9 @@ powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.c
 
 ---
 
-## ✨ Comprehensive Features Showcase
-
-### 1. 📥 Skill Download & Vault Management
-* **1-Click Skill Store Downloads:** Explore official, community-tested skills from **The Store** or import skills directly from remote Git URLs and local folders.
-* **Personal Skill Vault ("My Downloads"):** Every downloaded skill is preserved in your offline vault with:
-  * 📅 **Acquisition Timestamps:** Track exact installation dates and SemVer update history.
-  * 🔒 **SHA-256 Cryptographic Checksums:** Guarantee tamper-proof files across workspaces.
-  * 🏷️ **Rule & Capability Badges:** Inspect instructions, tool bindings, and prompt categories at a glance.
-  * ⚖️ **Token Weight Tiers:** Categorized into *Lean*, *Standard*, or *Pro* context weights.
-* **1-Click "Add to Workspace":** Deploy any skill directly from your vault into an active project workspace with instantaneous dashboard navigation.
-
-### 2. 🎒 Bundle Creation & Collaboration Studio
-* **Custom Bundle Authoring:** Group complementary skills into specialized engineering stacks (e.g., *Frontend Pro Stack*, *Security Hardened Pack*, *AI Agent Automation*).
-* **Universal Bundle Editor:** Customize, edit, or fork both custom user bundles and official packs with persistent local overrides.
-* **1-Click Bulk Workspace Deployment:** Deploy an entire curated or custom bundle into any target project workspace with a single click.
-* **Pre-Configured Official Stacks:**
-  * 🌐 **Full-Stack Web Pack:** React 19, Next.js, Node.js Backend, UI/UX Pro Max.
-  * 🛡️ **Security Hardened Pack:** Backend Security Coder, OWASP Security Audit, Secrets Scanner.
-  * 📱 **Mobile Multiplatform Pack:** Flutter Responsive, React Native, Swift iOS, Kotlin Android.
-  * ☁️ **DevOps & Cloud Pack:** Docker, Kubernetes, Terraform, CI/CD, Performance Optimization.
-  * 🏛️ **Architecture & Clean Code Pack:** Software Architecture, Code Review Excellence, Scientific Debugger.
-
-### 3. 🤖 Complete 5-Platform AI Target Matrix
-Write your instructions once in clean markdown; Nexora automatically transpiles and writes:
-* **Google Antigravity:** `.agents/skills/<skill>/SKILL.md` with validated YAML frontmatter.
-* **Cursor IDE:** `.cursor/rules/<skill>.mdc` with glob triggers and description headers.
-* **GitHub Copilot:** `.github/copilot-instructions.md` with isolated delimiter fences.
-* **Claude Code:** `.claude/skills/<skill>/SKILL.md` with clean tool capability bounds.
-* **OpenAI Codex:** `.codex/skills/<skill>/SKILL.md` formatted for CLI runner execution.
-
-### 4. 🛡️ Token Safety Governor & Context Meter
-* **Prompt Weight Calculation:** Computes exact character, word, and token counts for every individual skill and bundle.
-* **Context Headroom Safeguards:** Real-time visual meters warn you before a skill set bloats LLM context windows, preventing latency and runaway API costs.
-
-### 5. 🔄 Batch Update Center & 100% Atomic Rollbacks
-* **SemVer Drift Detection:** Automatically detects upstream releases and breaking changes across your installed skills.
-* **3-Way Checksum Diff Viewer:** Side-by-side comparison of local customizations vs. upstream catalog releases.
-* **100% Byte-for-Byte Atomic Rollback:** Backed by transactional journal snapshots. If an update breaks or is interrupted, Nexora restores the previous project state cleanly with zero file corruption.
-
-### 6. 🎨 Multi-Theme Engine
-* **System Theme (Auto-Sync):** Dynamically syncs with Windows dark/light OS appearance.
-* **White Normal Mode (Daylight Clean):** High-contrast `#ffffff` foundation with deep slate typography and full WCAG AA contrast compliance.
-* **Dark Mode (Charcoal Slate):** Developer-favorite `#0d1117` deep foundation with violet accents.
-* **Zero-Flash Startup:** Fast rendering before first DOM paint.
-
-### 7. 🩺 6-Category System Doctor
-* Automated diagnostics across runtime files, platform adapters, environment variables, folder permissions, and bridge health with **1-click automated self-repair**.
-
-### 8. 🔒 100% Sovereign Local Privacy
-* **100% Local Processing:** Parsing, transpilation, and file compilation execute entirely on your machine.
-* **Zero Telemetry:** Never transmits your project files, instructions, or codebase telemetry.
-* **Zero Secret Storage:** Never stores API keys, credentials, or proprietary instructions in external clouds.
-
----
-
 ## 🚀 How to Use & Workflow Guide
 
-### 🗺️ 4-Step User Journey Map
+### 🗺️ 4-Step User Journey Map (Card UI)
 
 | 🗂️ **Card 1 — Connect Workspace** | 🏪 **Card 2 — Skill Studio** |
 | :--------------------------------- | :---------------------------- |
@@ -148,7 +93,7 @@ Write your instructions once in clean markdown; Nexora automatically transpiles 
 
 ---
 
-### 🛠️ Custom Bundle Lifecycle Map
+### 🛠️ Custom Bundle Lifecycle Map (Card UI)
 
 | 🎒 **Card 1 — Select Skills** | ⚙️ **Card 2 — Bundle Studio** |
 | :----------------------------- | :----------------------------- |
@@ -158,18 +103,156 @@ Write your instructions once in clean markdown; Nexora automatically transpiles 
 
 ---
 
+## 📖 Practical "How to Use" Scenarios & Functions
+
+### Scenario 1: Initializing a New Project & Multi-IDE Target Sync
+1. Launch **Nexora Skills Manager** from your Start Menu or type `nexora start` in your terminal.
+2. In the top navigation bar, click **Select Workspace** and browse to your project root (e.g., `D:\MyProject`).
+3. Nexora's **Project Detector** will immediately scan your codebase (detecting React, Python, Go, Node.js, Docker, etc.) and show active adapter badges:
+   * 🟢 `.agents/skills` (Google Antigravity)
+   * 🟢 `.cursor/rules` (Cursor IDE)
+   * 🟢 `.github` (GitHub Copilot)
+   * 🟢 `.claude/skills` (Claude Code)
+   * 🟢 `.codex/skills` (OpenAI Codex)
+4. Browse **The Store**, click **Install** on desired skills (e.g., `frontend-developer`, `backend-architect`).
+5. Click **Apply to Workspace**. Within milliseconds, all corresponding rule and skill files are formatted, compiled, and written to their respective IDE folders.
+
+---
+
+### Scenario 2: Authoring a Custom Bundle with Live Token Budgeting
+1. Open **Skill Wallet** in the primary navigation sidebar.
+2. Click **`+ New Custom Bundle`**.
+3. Name your stack (e.g., `Fintech Secure Architecture Stack`).
+4. Select complementary skills from your offline vault (e.g., `backend-security-coder`, `postgresql-optimization`, `security_audit`).
+5. Observe the **Token Governor Meter**:
+   * It calculates combined character count, word count, and token overhead.
+   * A visual badge indicates whether your stack is **Lean (< 1k tokens)**, **Standard (1k–4k tokens)**, or **Pro (4k–8k tokens)**.
+6. Click **Save Bundle**. Your custom bundle is now stored in your local vault (`%LOCALAPPDATA%\NexoraSkillsManager\vault\bundles`) and can be applied to any future workspace with 1 click.
+
+---
+
+### Scenario 3: Upstream Catalog Updates & 3-Way Checksum Diffing
+1. Navigate to the **Updates** tab in the sidebar.
+2. Nexora queries the upstream index and compares local SHA-256 file hashes against remote releases.
+3. If an upstream author improved a skill you use, a **Update Available** pill appears.
+4. Click **Inspect Diff** to view a 3-way visual comparison:
+   * **Left:** Your local customizations & overrides.
+   * **Center:** Base installed release.
+   * **Right:** Upstream incoming release.
+5. Click **Apply Update**. Nexora takes an atomic snapshot and cleanly merges the new changes.
+
+---
+
+### Scenario 4: Performing an Instant Emergency Rollback
+If an update or bundle application produces unintended agent behavior in your IDE:
+1. Click **Dashboard** and view the **Recent Operations** activity feed.
+2. Click **Rollback** on the latest operation, or run `nexora rollback` from your terminal.
+3. Nexora reads `.nexora/journal.json`, retrieves the exact pre-commit snapshot, and restores every modified or deleted file byte-for-byte in < 1 second.
+4. Your IDE immediately reflects the restored instructions without syntax errors or leftover artifacts.
+
+---
+
+### Scenario 5: Running the 6-Category System Doctor
+1. Click **Doctor** in the sidebar or run `nexora doctor` in terminal.
+2. Nexora runs 6 non-destructive diagnostic suites:
+   * Installation metadata integrity
+   * Engine core entrypoints
+   * Universal catalog completeness (all 48+ skills accounted for)
+   * CLI registration and User PATH availability
+   * Legacy backward-compatibility shims
+   * Platform adapter health
+3. If any check reports `WARN` or `FAIL`, click **Auto-Repair** or execute `nexora doctor --repair` to fix paths, restore command shims, and re-bind adapters automatically.
+
+---
+
+## 🤖 Complete 5-Platform AI Target Matrix
+
+Write your instructions once in clean Markdown; Nexora automatically transpiles and writes:
+
+| AI IDE Target | Generated File Location | Format & Syntax Translation | Target Behavior |
+| :--- | :--- | :--- | :--- |
+| **Google Antigravity** | `.agents/skills/<skill>/SKILL.md` | Strict YAML frontmatter (`name`, `description`), markdown body | Parsed dynamically by Antigravity agent workflow engine |
+| **Cursor IDE** | `.cursor/rules/<skill>.mdc` | MDC metadata headers (`description`, `globs`, `alwaysApply: false`) | Triggered automatically by Cursor when editing matching glob patterns |
+| **GitHub Copilot** | `.github/copilot-instructions.md` | Isolated markdown sections with unique delimiter fences | Loaded by Copilot Chat and inline completions across workspaces |
+| **Claude Code** | `.claude/skills/<skill>/SKILL.md` | Isolated skill directories with tool capability bounds | Read by Claude CLI runner for specialized domain workflows |
+| **OpenAI Codex** | `.codex/skills/<skill>/SKILL.md` | Single-file tool definition format with clean CLI entrypoints | Consumed by Codex runner engines for scripted code transformations |
+
+---
+
+## 🛡️ Token Safety Governor & Context Meter
+
+AI models have strict context window budgets. Injecting bloated skill instructions degrades reasoning accuracy and incurs high API token costs. Nexora's **Token Safety Governor** protects your projects:
+
+| Headroom Tier | Token Range | Status Indicator | Recommended Usage |
+| :---: | :---: | :---: | :--- |
+| **Lean** | `< 1,000` tokens | 🟢 `SAFE` | Highly focused rules (e.g., code formatters, git hooks). Zero impact on model speed. |
+| **Standard** | `1,000 – 4,000` tokens | 🔵 `OPTIMAL` | Full-featured domain skills (e.g., React developer, FastAPI architect). Recommended stack size. |
+| **Pro** | `4,000 – 8,000` tokens | 🟡 `MODERATE` | Deep domain bundles with extensive examples. Suitable for complex system reviews. |
+| **Overflow** | `> 8,000` tokens | 🔴 `WARNING` | High context overhead. Nexora warns you to prune redundant rules before deploying. |
+
+---
+
+## 🔄 100% Byte-for-Byte Atomic Rollback Engine
+
+Every modification in Nexora is transactional. When you click **Apply** or run an update:
+
+1. **Pre-Flight Snapshot:** Nexora records a cryptographic SHA-256 hash of all target files and archives their exact contents into `.nexora/snapshots/<timestamp>/`.
+2. **Atomic Write:** New files are written in a batch transaction. If power fails or an error occurs mid-write, the transaction aborts cleanly.
+3. **Journal Commit:** Successful operations are logged to `.nexora/journal.json` with timestamp, skill IDs, and diff manifests.
+4. **1-Click Rollback:** Reverting an operation restores the pre-flight snapshot instantly, guaranteeing zero corrupted or half-written configurations.
+
+---
+
+## 🩺 6-Category System Doctor & Self-Healing
+
+The built-in diagnostic engine validates your entire desktop and terminal environment:
+
+```powershell
+nexora doctor --repair
+```
+
+| Diagnostic Suite | What It Checks | Auto-Repair Action |
+| :--- | :--- | :--- |
+| **1. Metadata Integrity** | Validates `install.json` in `%LOCALAPPDATA%\NexoraSkillsManager` | Reconstructs metadata referencing active runtime root |
+| **2. Engine Entrypoints** | Ensures `NexoraEngine.ps1` and core assemblies exist | Restores missing engine scripts from cache fallback |
+| **3. Universal Catalog** | Verifies offline skill database integrity (48+ skills) | Rebuilds catalog index from bundled archive |
+| **4. CLI Shims & PATH** | Checks `nexora.cmd` and User `PATH` environment variable | Recreates command shims and restores PATH registration |
+| **5. Legacy Compatibility** | Validates `agpm.cmd` backwards compatibility | Re-links legacy command bridge to primary CLI |
+| **6. Platform Adapters** | Tests all 5 IDE transpiler modules for syntax errors | Re-initializes adapter registry and schema validators |
+
+---
+
+## 💻 Comprehensive Terminal CLI Reference
+
+Nexora includes a complete terminal interface accessible from PowerShell, CMD, or bash:
+
+| Command | Arguments / Flags | Description |
+| :--- | :--- | :--- |
+| `nexora start` | — | Launches the native Windows desktop graphical control plane |
+| `nexora scan` | `[path]` | Analyzes a project folder and detects tech stack and AI adapters |
+| `nexora doctor` | `[--repair] [--json]` | Runs diagnostic health checks and optionally repairs issues |
+| `nexora skills list` | `[--category <cat>]` | Lists all installed and available skills in the catalog |
+| `nexora skills search` | `<query>` | Searches skills by keyword, programming language, or tool |
+| `nexora skills install` | `<skill-id> [--project <dir>]` | Installs and compiles a skill into an active project workspace |
+| `nexora skills bundle` | `create <name> [skills...]` | Assembles a custom reusable skill bundle from CLI |
+| `nexora rollback` | `[--project <dir>] [--steps <n>]` | Undoes the last deployment operation using journal snapshots |
+| `nexora update` | `[--check] [--all]` | Checks for upstream skill updates and applies non-breaking diffs |
+| `nexora projects` | `[list \| add \| remove]` | Manages registered project workspaces |
+
+---
+
 ## 📦 Official Skill Catalog Summary
 
-Nexora connects to an expanding library of **30+ official pre-verified skills** curated across 6 core engineering pillars:
+Nexora connects to an expanding library of **48+ official pre-verified skills** curated across 6 core engineering pillars:
 
-| Category | Coverage Scope |
-| :--- | :--- |
-| 🌐 **Frontend & UI/UX** | React 19, Next.js 15, Design Systems, Mobile (Flutter, React Native, Swift iOS, Kotlin Android) |
-| ⚙️ **Backend & Microservices** | REST/gRPC API Architecture, Node.js, FastAPI, Go 1.21+, Rust Systems Programming |
-| 🛡️ **Security & Auditing** | OWASP Top 10 Scanning, Secrets Scanner, Auth Hardening, DevSecOps |
-| 🧪 **Quality Assurance (QA)** | Unit Testing, Widget Testing, Regression Suites, Scientific Debugger |
-| 🗄️ **Database & Architecture** | PostgreSQL Optimization, Supabase RLS, Clean Architecture, Domain-Driven Design |
-| ☁️ **DevOps & Cloud** | Docker, Kubernetes, CI/CD Workflows, Cloud Infrastructure, Web Performance Optimization |
+| Category | Coverage Scope | Example Curated Skills |
+| :--- | :--- | :--- |
+| 🌐 **Frontend & UI/UX** | React 19, Next.js 15, Design Systems, Mobile (Flutter, React Native, Swift iOS, Kotlin Android) | `frontend-developer`, `frontend_design`, `ui_ux_pro_max` |
+| ⚙️ **Backend & Microservices** | REST/gRPC API Architecture, Node.js, FastAPI, Go 1.21+, Rust Systems Programming | `backend-architect`, `nodejs-backend-developer`, `python-fastapi-developer` |
+| 🛡️ **Security & Auditing** | OWASP Top 10 Scanning, Secrets Scanner, Auth Hardening, DevSecOps | `security_audit`, `backend-security-coder`, `security-auditor` |
+| 🧪 **Quality Assurance (QA)** | Unit Testing, Widget Testing, Regression Suites, Scientific Debugger | `scaffold_tests`, `test_runner`, `debugger`, `flutter-add-widget-test` |
+| 🗄️ **Database & Architecture** | PostgreSQL Optimization, Supabase RLS, Clean Architecture, Domain-Driven Design | `postgresql-optimization`, `supabase-postgres-best-practices` |
+| ☁️ **DevOps & Cloud** | Docker, Kubernetes, CI/CD Workflows, Cloud Infrastructure, Web Performance Optimization | `docker-kubernetes-devops`, `web_performance_optimization` |
 
 > The official catalog is automatically synchronized directly with our live catalog index ([`catalog/skills-index.json`](catalog/skills-index.json)) with dual-tier offline cache fallback.
 
