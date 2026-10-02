@@ -140,14 +140,11 @@ Write your instructions once in clean markdown; Nexora automatically transpiles 
 
 ### 🗺️ 4-Step User Journey Map
 
-```mermaid
-flowchart LR
-    classDef step fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#fff;
-
-    S1["1️⃣ Connect Workspace\n• Auto-detect tech stack\n• Initialize AI targets"]:::step --> S2["2️⃣ Skill Studio\n• Browse The Store\n• Author custom skills"]:::step
-    S2 --> S3["3️⃣ Skill Wallet\n• Manage Vault & Bundles\n• Token Headroom Check"]:::step
-    S3 --> S4["4️⃣ Fleet Deploy\n• 1-Click Multi-IDE Sync\n• 100% Atomic Commit"]:::step
-```
+<p align="center">
+  <a href="https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/assets/workflow_map.svg" target="_blank" title="Click to view full-resolution workflow map">
+    <img src="assets/workflow_map.svg" alt="4-Step User Journey Map" width="950" />
+  </a>
+</p>
 
 1. **Connect Workspace:** Select your project folder. Nexora automatically analyzes dependencies and activates target IDE adapters (`.agents/skills`, `.cursor/rules`, `.github`, `.claude`, `.codex`).
 2. **Skill Studio:** Browse pre-verified skills in **The Store**, author custom instructions with the built-in editor, or import external Git repositories.
@@ -158,17 +155,11 @@ flowchart LR
 
 ### 🛠️ Custom Bundle Lifecycle Map
 
-```mermaid
-flowchart LR
-    classDef input fill:#111827,stroke:#6366f1,stroke-width:2px,color:#fff;
-    classDef editor fill:#042f2e,stroke:#10b981,stroke-width:2px,color:#fff;
-    classDef bundle fill:#3b0764,stroke:#c084fc,stroke-width:2px,color:#fff;
-    classDef target fill:#082f49,stroke:#38bdf8,stroke-width:2px,color:#fff;
-
-    A["🎒 Select Skills\n(Store or Vault)"]:::input --> B["⚙️ Open Bundle Editor\n(Set Name & Overrides)"]:::editor
-    B --> C["📦 Saved Bundle Pack\n(Custom or Official)"]:::bundle
-    C --> D["🚀 1-Click Fleet Deploy\n(All 5 Targets Synced)"]:::target
-```
+<p align="center">
+  <a href="https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/assets/bundle_lifecycle.svg" target="_blank" title="Click to view full-resolution bundle lifecycle map">
+    <img src="assets/bundle_lifecycle.svg" alt="Custom Bundle Lifecycle Map" width="950" />
+  </a>
+</p>
 
 1. **Open Skill Wallet:** Click **Skill Wallet** in the primary navigation sidebar.
 2. **Click "New Custom Bundle":** Enter a descriptive name (e.g., `Full-Stack Web Suite` or `Security Hardened Pack`).
@@ -211,10 +202,6 @@ Nexora connects to an expanding library of **30+ official pre-verified skills** 
   <a href="https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/assets/benchmark_trajectory.png" target="_blank" title="Click to view full-resolution benchmark trajectory graph">
     <img src="assets/benchmark_trajectory.png" alt="5-Platform Multi-IDE Setup & Maintenance Trajectory" width="950" />
   </a>
-</p>
-
-<p align="center">
-  <sub>🔍 <i>Click image above to view full-resolution interactive graphic in popup window</i></sub>
 </p>
 
 ### 5-Platform Quantitative Metric Matrix
