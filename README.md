@@ -83,22 +83,36 @@ powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.c
 
 ## 🚀 How to Use & Workflow Guide
 
-### 🗺️ 4-Step User Journey Map (Card UI)
+### 🗺️ 4-Step User Journey Map (Sequential Workflow)
 
-| 🗂️ **Card 1 — Connect Workspace** | 🏪 **Card 2 — Skill Studio** |
-| :--------------------------------- | :---------------------------- |
+| Step Count | Workflow Phase | Core Action | What Nexora Does |
+| :---: | :--- | :--- | :--- |
+| **`01`** | **Connect Workspace** | Select your project folder | Auto-scans dependencies & initializes 5 target adapters (`.agents`, `.cursor`, `.github`, `.claude`, `.codex`) |
+| **`02`** | **Skill Studio** | Browse **The Store** or author custom rules | Validates markdown schema, tool bindings, and prompt instructions |
+| **`03`** | **Skill Wallet** | Assemble bundles & audit context | **Token Governor** calculates cumulative tokens & assigns headroom tier (*Lean*, *Standard*, *Pro*) |
+| **`04`** | **Fleet Deploy** | Click **Apply to Workspace** | Synchronizes all 5 AI targets simultaneously with 100% byte-for-byte atomic rollback snapshot |
+
+| 1️⃣ **STEP 01 — Connect Workspace** | 2️⃣ **STEP 02 — Skill Studio** |
+| :---------------------------------- | :----------------------------- |
 | **📁 Ingestion & Adapter Setup**<br>• Point Nexora to your project root folder<br>• Auto-detects dependencies & active framework stack<br>• Initializes 5 target AI adapters (`.agents`, `.cursor`, `.github`, `.claude`, `.codex`) | **🛠️ Discovery & Instruction Authoring**<br>• Explore 30+ verified official skills in **The Store**<br>• Author bespoke instructions with the built-in Markdown editor<br>• Direct-import skills from any remote Git repository URL |
-| 🎒 **Card 3 — Skill Wallet** | 🚀 **Card 4 — Fleet Deploy** |
+| 3️⃣ **STEP 03 — Skill Wallet** | 4️⃣ **STEP 04 — Fleet Deploy** |
 | **📦 Stack Bundling & Token Safety**<br>• Organize downloaded skills into curated or bespoke bundles<br>• Fine-tune per-stack prompt rules and custom overrides<br>• Real-time **Token Governor** calculates context headroom & tiers | **⚡ 1-Click Multi-IDE Sync**<br>• Click **Apply** to synchronize all 5 AI targets simultaneously<br>• Sub-second local compilation with zero cloud dependencies<br>• **100% Byte-for-Byte Atomic Rollback** snapshot protection |
 
 ---
 
-### 🛠️ Custom Bundle Lifecycle Map (Card UI)
+### 🛠️ Custom Bundle Lifecycle Map (Sequential Workflow)
 
-| 🎒 **Card 1 — Select Skills** | ⚙️ **Card 2 — Bundle Studio** |
-| :----------------------------- | :----------------------------- |
+| Stage Count | Studio Milestone | Developer Action | System Safeguard |
+| :---: | :--- | :--- | :--- |
+| **`01`** | **Select Skills** | Pick skills from **My Downloads** or **The Store** | Verifies SHA-256 checksums and rule compatibility |
+| **`02`** | **Bundle Studio** | Name stack & customize rule overrides | Persists custom bundle definition locally in offline vault |
+| **`03`** | **Headroom Audit** | Review live character, word & token count | Alerts if bundle exceeds *Lean* or *Standard* context limits |
+| **`04`** | **Fleet Deploy** | Click **Apply Bundle to Workspace** | Compiles to 5 IDE targets and records transaction in `.nexora/journal.json` |
+
+| 1️⃣ **STAGE 01 — Select Skills** | 2️⃣ **STAGE 02 — Bundle Studio** |
+| :------------------------------- | :------------------------------ |
 | **📥 Skill Selection & Discovery**<br>• Choose skills from **My Downloads** or **The Store**<br>• Pick complementary tools (e.g. React 19 + Next.js + Tailwind)<br>• Start from scratch or fork pre-configured official bundles | **📝 Customization & Metadata**<br>• Name your bundle (e.g. *Full-Stack Web Suite* or *Security Pack*)<br>• Define stack-specific rule overrides and prompt instructions<br>• Save bundle configuration directly to your local offline vault |
-| 🛡️ **Card 3 — Headroom Audit** | 🚀 **Card 4 — Fleet Deploy** |
+| 3️⃣ **STAGE 03 — Headroom Audit** | 4️⃣ **STAGE 04 — Fleet Deploy** |
 | **⚖️ Token Budget Calculation**<br>• Dynamic computation of total character, word, and token counts<br>• Visual headroom alerts (*Lean*, *Standard*, *Pro* tiers)<br>• Prevent LLM prompt bloat, latency, and runaway API token costs | **⚡ Transactional Commit**<br>• Click **Apply Bundle to Workspace** for 1-click execution<br>• Simultaneous compilation into all 5 IDE targets in < 1 second<br>• Atomic journal snapshot automatically created for instant rollback |
 
 ---
