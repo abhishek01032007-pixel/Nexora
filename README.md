@@ -12,9 +12,9 @@
 </p>
 
 <p align="center">
-  <a href="#-installation-options--strictly-2-choices"><img src="https://img.shields.io/badge/Download-Windows%2010%20%7C%2011%20x64-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Download for Windows" /></a>
+  <a href="#-installation-options"><img src="https://img.shields.io/badge/Download-Windows%2010%20%7C%2011%20x64-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Download for Windows" /></a>
   <a href="https://github.com/abhishek01032007-pixel/Nexora/releases/latest"><img src="https://img.shields.io/badge/Release-v1.2.0%20Latest-0A84FF?style=for-the-badge&logo=github&logoColor=white" alt="Latest Release" /></a>
-  <a href="#choice-2-one-command-automated-setup"><img src="https://img.shields.io/badge/Runtime-PowerShell%205.1%2B%20Native-5391FE?style=for-the-badge&logo=powershell&logoColor=white" alt="PowerShell Native" /></a>
+  <a href="#option-2-one-command-automated-setup"><img src="https://img.shields.io/badge/Runtime-PowerShell%205.1%2B%20Native-5391FE?style=for-the-badge&logo=powershell&logoColor=white" alt="PowerShell Native" /></a>
   <a href="#-100-byte-for-byte-atomic-rollback-engine"><img src="https://img.shields.io/badge/Safety-100%25%20Atomic%20Rollback-10B981?style=for-the-badge&logo=shield&logoColor=white" alt="Atomic Rollback" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-F59E0B?style=for-the-badge" alt="License MIT" /></a>
 </p>
@@ -36,11 +36,11 @@ Whenever you update a prompt rule, fix a coding standard, or add an engineering 
 
 ---
 
-## ⚡ Installation Options — Strictly 2 Choices
+## ⚡ Installation Options
 
 > **Exclusively Engineered for Windows:** Nexora is built specifically for **Windows 10 & 11 (64-bit)**, leveraging native Windows PowerShell runtime cmdlets, local filesystem performance, and non-elevated user-space security. **No Node.js or Python runtime is required on your machine.**
 
-### Choice 1: Standalone Graphical Installer (`.exe`)
+### Option 1: Standalone Graphical Installer (`.exe`)
 
 Download and run the official Windows desktop setup package:
 
@@ -56,7 +56,7 @@ Download and run the official Windows desktop setup package:
 
 ---
 
-### Choice 2: One-Command Automated Setup
+### Option 2: One-Command Automated Setup
 
 Open your terminal and paste one command to automatically download, verify, and initialize Nexora:
 
