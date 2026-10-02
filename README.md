@@ -36,7 +36,7 @@ Whenever you update a prompt rule, fix a coding standard, or add an engineering 
 
 ---
 
-## ⚡ Installation Options
+## ⚡ Installation Options — Strictly 2 Choices
 
 > **Exclusively Engineered for Windows:** Nexora is built specifically for **Windows 10 & 11 (64-bit)**, leveraging native Windows PowerShell runtime cmdlets, local filesystem performance, and non-elevated user-space security. **No Node.js or Python runtime is required on your machine.**
 
@@ -46,7 +46,7 @@ Download and run the official Windows desktop setup package:
 
 <p align="center">
   <a href="https://github.com/abhishek01032007-pixel/Nexora/releases/download/v1.2.0/NexoraSkillsManager-Setup.exe">
-    <img src="https://img.shields.io/badge/⬇️%20Download%20for%20Windows-Setup.exe%20(v1.2.0)-0078D4?style=for-the-badge&logo=windows&logoColor=white" height="46" alt="Download for Windows" />
+    <img src="https://img.shields.io/badge/⬇️%20Download%20for%20Windows-Setup.exe%20(v1.2.0)-0078D4?style=for-the-badge&logo=windows&logoColor=white" height="60" alt="Download for Windows" />
   </a>
 </p>
 
