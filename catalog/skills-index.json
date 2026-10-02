@@ -1,0 +1,379 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "1.1.0",
+  "channel": "stable",
+  "generatedAt": "2026-10-02T00:00:00Z",
+  "totalSkills": 30,
+  "publisher": {
+    "name": "Nexora Skills Manager",
+    "id": "nexora-official",
+    "type": "first-party"
+  },
+  "skills": {
+    "frontend-developer": {
+      "id": "frontend-developer",
+      "name": "Frontend Developer",
+      "description": "React 19, Next.js 15 App Router, Server Components, and modern frontend architecture patterns.",
+      "category": "frontend",
+      "latestVersion": "1.1.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.1.0": { "version": "1.1.0", "releasedAt": "2026-10-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "minor", "changelog": "Added React 19 Server Actions and streaming patterns." },
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "frontend-design": {
+      "id": "frontend-design",
+      "name": "Frontend Design System",
+      "description": "High-contrast design tokens, component hierarchies, and micro-animation systems.",
+      "category": "frontend",
+      "latestVersion": "1.1.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.1.0": { "version": "1.1.0", "releasedAt": "2026-10-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "minor", "changelog": "Added glassmorphism token set and daylight color palette." },
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "ui-ux-pro-max": {
+      "id": "ui-ux-pro-max",
+      "name": "UI/UX Pro Max",
+      "description": "UX patterns database, fluid micro-animations, responsive motion, and searchable design pattern library.",
+      "category": "frontend",
+      "latestVersion": "1.1.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.1.0": { "version": "1.1.0", "releasedAt": "2026-10-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "minor" },
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "enhance-ui": {
+      "id": "enhance-ui",
+      "name": "Enhance UI",
+      "description": "Systematic UI enhancement and verification. Styling upgrades, responsiveness, and integrity testing.",
+      "category": "frontend",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "flutter-build-responsive-layout": {
+      "id": "flutter-build-responsive-layout",
+      "name": "Flutter Responsive Layout",
+      "description": "Adaptive multi-form-factor layouts using LayoutBuilder, MediaQuery, and Expanded/Flexible.",
+      "category": "mobile",
+      "latestVersion": "1.1.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.1.0": { "version": "1.1.0", "releasedAt": "2026-10-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "minor" },
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "flutter-add-widget-test": {
+      "id": "flutter-add-widget-test",
+      "name": "Flutter Widget Testing",
+      "description": "WidgetTester component-level tests for UI rendering and user interaction verification.",
+      "category": "qa",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "dart-add-unit-test": {
+      "id": "dart-add-unit-test",
+      "name": "Dart Unit Testing",
+      "description": "Domain logic, model assertions, and unit test organization using package:test.",
+      "category": "qa",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "react-native-developer": {
+      "id": "react-native-developer",
+      "name": "React Native Developer",
+      "description": "Production-ready React Native with Expo, navigation, state management, and offline-first architecture.",
+      "category": "mobile",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-10-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "swift-ios-developer": {
+      "id": "swift-ios-developer",
+      "name": "Swift iOS Developer",
+      "description": "Native iOS with Swift/SwiftUI, iOS 18, Core Data, and App Store optimization.",
+      "category": "mobile",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-10-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "kotlin-android-developer": {
+      "id": "kotlin-android-developer",
+      "name": "Kotlin Android Developer",
+      "description": "Modern Android with Jetpack Compose, state management, navigation, and Material Design 3.",
+      "category": "mobile",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-10-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "backend-architect": {
+      "id": "backend-architect",
+      "name": "Backend Architect",
+      "description": "Scalable API design, microservices, REST/GraphQL/gRPC contracts, and service mesh patterns.",
+      "category": "backend",
+      "latestVersion": "1.1.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.1.0": { "version": "1.1.0", "releasedAt": "2026-10-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "minor" },
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "api-design-principles": {
+      "id": "api-design-principles",
+      "name": "API Design Principles",
+      "description": "RESTful idempotent verbs, standard envelopes, versioning, and GraphQL schema design.",
+      "category": "backend",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "backend-security-coder": {
+      "id": "backend-security-coder",
+      "name": "Backend Security Coder",
+      "description": "OWASP input validation, authentication hardening, and API security patterns.",
+      "category": "security",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "nodejs-backend-developer": {
+      "id": "nodejs-backend-developer",
+      "name": "Node.js Backend Developer",
+      "description": "Production-ready Node.js with Express/Fastify, middleware patterns, and microservices.",
+      "category": "backend",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-10-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "python-fastapi-developer": {
+      "id": "python-fastapi-developer",
+      "name": "Python FastAPI Developer",
+      "description": "High-performance async APIs with FastAPI, SQLAlchemy 2.0, Pydantic V2, and WebSockets.",
+      "category": "backend",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-10-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "go-microservices-developer": {
+      "id": "go-microservices-developer",
+      "name": "Go Microservices Developer",
+      "description": "Go 1.21+ with advanced concurrency, performance optimization, and production-ready microservices.",
+      "category": "backend",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-10-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "rust-systems-developer": {
+      "id": "rust-systems-developer",
+      "name": "Rust Systems Developer",
+      "description": "Rust 1.75+ async patterns, advanced type system, and production-ready systems programming.",
+      "category": "backend",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-10-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "docker-kubernetes-devops": {
+      "id": "docker-kubernetes-devops",
+      "name": "Docker & Kubernetes DevOps",
+      "description": "AWS/Azure/GCP, Kubernetes, Terraform, CI/CD, monitoring, and cloud-native development.",
+      "category": "devops",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-10-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "postgresql-optimization": {
+      "id": "postgresql-optimization",
+      "name": "PostgreSQL Optimization",
+      "description": "PostgreSQL-specific indexing, JSONB operations, array types, full-text search, and query optimization.",
+      "category": "database",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "supabase-postgres-best-practices": {
+      "id": "supabase-postgres-best-practices",
+      "name": "Supabase Postgres Best Practices",
+      "description": "Postgres RLS policies, schema migrations, indexes, triggers, and pgvector semantic search.",
+      "category": "database",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "test-runner": {
+      "id": "test-runner",
+      "name": "Test Runner",
+      "description": "Automated regression and test suite runner with failure analysis and fix recommendations.",
+      "category": "qa",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "debugger": {
+      "id": "debugger",
+      "name": "Debugger",
+      "description": "The Iron Law scientific debugging protocol. No fixes without root cause investigation.",
+      "category": "qa",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "scaffold-tests": {
+      "id": "scaffold-tests",
+      "name": "Scaffold Tests",
+      "description": "Generates unit and regression test stubs: Happy Path, Edge Case, and Error categories.",
+      "category": "qa",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "security-audit": {
+      "id": "security-audit",
+      "name": "Security Audit",
+      "description": "OWASP Top 10 vulnerability scanning: secrets, injection, authentication, and SECURITY.md management.",
+      "category": "security",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "architecture-patterns": {
+      "id": "architecture-patterns",
+      "name": "Architecture Patterns",
+      "description": "Clean Architecture, Hexagonal Architecture, and Domain-Driven Design for complex backend systems.",
+      "category": "architecture",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "web-performance-optimization": {
+      "id": "web-performance-optimization",
+      "name": "Web Performance Optimization",
+      "description": "Core Web Vitals, bundle size optimization, caching strategies, and runtime performance.",
+      "category": "devops",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "code-review": {
+      "id": "code-review",
+      "name": "Code Review",
+      "description": "Comprehensive code review covering functionality, security (OWASP), performance, and maintainability.",
+      "category": "qa",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "frontend-design-1": {
+      "id": "frontend-design-1",
+      "name": "Frontend Design Pro",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality and creative polish.",
+      "category": "frontend",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "ui-simulation-auditor": {
+      "id": "ui-simulation-auditor",
+      "name": "UI Simulation Auditor",
+      "description": "Automated UI simulation and interaction auditor for web and mobile frontends.",
+      "category": "qa",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    },
+    "optimize-codebase": {
+      "id": "optimize-codebase",
+      "name": "Optimize Codebase",
+      "description": "Identifies and refactors monolithic files into modular, performance-safe component structures.",
+      "category": "architecture",
+      "latestVersion": "1.0.0",
+      "platforms": ["antigravity", "cursor", "copilot", "claude", "codex"],
+      "publisher": { "name": "Nexora Skills Manager", "id": "nexora-official", "type": "first-party" },
+      "versions": {
+        "1.0.0": { "version": "1.0.0", "releasedAt": "2026-09-01T00:00:00Z", "minNexoraVersion": "1.0.0", "changeType": "major" }
+      }
+    }
+  }
+}
