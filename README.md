@@ -36,7 +36,7 @@ Whenever you update a prompt rule, fix a coding standard, or add an engineering 
 
 ---
 
-## ⚡ Installation Options — Strictly 2 Choices
+## ⚡ Installation Options
 
 > **Exclusively Engineered for Windows:** Nexora is built specifically for **Windows 10 & 11 (64-bit)**, leveraging native Windows PowerShell runtime cmdlets, local filesystem performance, and non-elevated user-space security. **No Node.js or Python runtime is required on your machine.**
 
