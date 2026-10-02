@@ -140,11 +140,19 @@ Write your instructions once in clean markdown; Nexora automatically transpiles 
 
 ### 🗺️ 4-Step User Journey Map
 
-<p align="center">
-  <a href="https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/assets/workflow_map.svg" target="_blank" title="Click to view full-resolution workflow map">
-    <img src="assets/workflow_map.svg" alt="4-Step User Journey Map" width="950" />
-  </a>
-</p>
+```text
+┌──────────────────────────────┐       ┌──────────────────────────────┐       ┌──────────────────────────────┐       ┌──────────────────────────────┐
+│  1. CONNECT WORKSPACE        │       │  2. SKILL STUDIO             │       │  3. SKILL WALLET             │       │  4. FLEET DEPLOY             │
+├──────────────────────────────┤       ├──────────────────────────────┤       ├──────────────────────────────┤       ├──────────────────────────────┤
+│ • Auto-detect tech stack     │ ────▶ │ • Browse 30+ Store skills    │ ────▶ │ • Organize Custom Bundles    │ ────▶ │ • 1-Click Multi-IDE Sync     │
+│ • Initialize 5 AI adapters   │       │ • Author custom instructions │       │ • Real-time Token Governor   │       │ • Sub-second compilation     │
+│ • Zero-config discovery      │       │ • Import external Git repos  │       │ • Context headroom check     │       │ • 100% Atomic journal commit │
+└──────────────────────────────┘       └──────────────────────────────┘       └──────────────────────────────┘       └──────────────────────────────┘
+```
+
+| Step 1: Connect Workspace | Step 2: Skill Studio | Step 3: Skill Wallet | Step 4: Fleet Deploy |
+| :--- | :--- | :--- | :--- |
+| **📁 Project Ingestion**<br>• Select your project directory<br>• Auto-detect dependencies & frameworks<br>• Activate target IDE adapters (`.agents`, `.cursor`, `.github`, `.claude`, `.codex`) | **🏪 The Store & Studio**<br>• Explore 30+ verified official skills<br>• Author bespoke instructions in Markdown<br>• Direct-import from any remote Git repository | **🎒 Vault & Bundles**<br>• Manage offline downloads in your personal vault<br>• Assemble custom stacks (e.g. Frontend, Security)<br>• Dynamic Token Governor monitors context limits | **🚀 1-Click Multi-IDE Sync**<br>• Synchronize across all 5 AI targets simultaneously<br>• Sub-second local compilation<br>• 100% Byte-for-byte atomic rollback protection |
 
 1. **Connect Workspace:** Select your project folder. Nexora automatically analyzes dependencies and activates target IDE adapters (`.agents/skills`, `.cursor/rules`, `.github`, `.claude`, `.codex`).
 2. **Skill Studio:** Browse pre-verified skills in **The Store**, author custom instructions with the built-in editor, or import external Git repositories.
@@ -155,11 +163,19 @@ Write your instructions once in clean markdown; Nexora automatically transpiles 
 
 ### 🛠️ Custom Bundle Lifecycle Map
 
-<p align="center">
-  <a href="https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/assets/bundle_lifecycle.svg" target="_blank" title="Click to view full-resolution bundle lifecycle map">
-    <img src="assets/bundle_lifecycle.svg" alt="Custom Bundle Lifecycle Map" width="950" />
-  </a>
-</p>
+```text
+┌──────────────────────────────┐       ┌──────────────────────────────┐       ┌──────────────────────────────┐       ┌──────────────────────────────┐
+│  1. SELECT SKILLS            │       │  2. BUNDLE EDITOR            │       │  3. HEADROOM AUDIT           │       │  4. FLEET DEPLOY             │
+├──────────────────────────────┤       ├──────────────────────────────┤       ├──────────────────────────────┤       ├──────────────────────────────┤
+│ • Pick from Store or Vault   │ ────▶ │ • Name custom stack          │ ────▶ │ • Calculate token budget     │ ────▶ │ • 1-Click Apply to Project   │
+│ • Curate complementary tools │       │ • Customize rule overrides   │       │ • Verify context headroom    │       │ • 5 IDE targets updated      │
+│ • Fork official packs        │       │ • Persist bundle metadata    │       │ • Lock SemVer versions       │       │ • 100% Transactional safety │
+└──────────────────────────────┘       └──────────────────────────────┘       └──────────────────────────────┘       └──────────────────────────────┘
+```
+
+| Stage 1: Select Skills | Stage 2: Bundle Editor | Stage 3: Headroom Audit | Stage 4: 1-Click Fleet Deploy |
+| :--- | :--- | :--- | :--- |
+| **🎒 Skill Selection**<br>• Browse downloaded skills in **My Downloads**<br>• Pick complementary tools from **The Store**<br>• Start from scratch or fork official bundles | **⚙️ Customization Studio**<br>• Set stack name (e.g. *Full-Stack Web Suite*)<br>• Define stack-specific rule overrides<br>• Persist custom bundle metadata locally | **🛡️ Token Governor Audit**<br>• Real-time cumulative token calculation<br>• Headroom tier alerts (*Lean*, *Standard*, *Pro*)<br>• Prevent LLM prompt overflow & latency | **🚀 Transactional Commit**<br>• Click **Apply Bundle to Workspace**<br>• Simultaneous compilation into all 5 IDE targets<br>• Snapshot created for instant rollback |
 
 1. **Open Skill Wallet:** Click **Skill Wallet** in the primary navigation sidebar.
 2. **Click "New Custom Bundle":** Enter a descriptive name (e.g., `Full-Stack Web Suite` or `Security Hardened Pack`).
