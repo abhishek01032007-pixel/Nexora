@@ -5,9 +5,9 @@
 </p>
 
 <p align="center">
+  <a href="#-download-for-windows"><img src="https://img.shields.io/badge/Download-Windows%2010%20%7C%2011%20x64-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Download for Windows" /></a>
   <a href="https://github.com/abhishek01032007-pixel/Nexora/releases/latest"><img src="https://img.shields.io/badge/Release-v1.2.0%20Latest-0A84FF?style=for-the-badge&logo=github&logoColor=white" alt="Latest Release" /></a>
-  <a href="#-system-requirements--prerequisites"><img src="https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011%20x64-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Platform Windows" /></a>
-  <a href="#-option-1-one-command-automated-setup"><img src="https://img.shields.io/badge/Runtime-PowerShell%205.1%2B%20Native-5391FE?style=for-the-badge&logo=powershell&logoColor=white" alt="PowerShell Native" /></a>
+  <a href="#-one-command-automated-setup"><img src="https://img.shields.io/badge/Runtime-PowerShell%205.1%2B%20Native-5391FE?style=for-the-badge&logo=powershell&logoColor=white" alt="PowerShell Native" /></a>
   <a href="#-enterprise-safety--atomic-rollback-guarantee"><img src="https://img.shields.io/badge/Safety-100%25%20Atomic%20Rollback-10B981?style=for-the-badge&logo=shield&logoColor=white" alt="Atomic Rollback" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-F59E0B?style=for-the-badge" alt="License MIT" /></a>
 </p>
@@ -16,7 +16,7 @@
 
 ## 💡 What is Nexora Skills Manager?
 
-**Nexora Skills Manager** is a dedicated native Windows desktop application that unifies and controls AI agent skills, rules, and prompts across your development workspace.
+**Nexora Skills Manager** is a dedicated native Windows desktop control plane that unifies, authors, tests, and deploys AI agent skills, rules, and prompts across your development workspace.
 
 Modern AI engineering is fragmented across multiple competing configuration formats:
 * **Google Antigravity** requires `.agents/skills/<skill>/SKILL.md` with YAML metadata
@@ -29,45 +29,40 @@ Nexora eliminates configuration drift and manual copy-pasting by providing a **s
 
 ---
 
-## 📥 Download & Installation Options
+## 📥 Download for Windows
 
-Choose your preferred way to install and run Nexora Skills Manager:
+> **Exclusively Engineered for Windows:** Nexora is built natively for Windows 10 & 11 (64-bit), taking full advantage of Windows PowerShell, native desktop security models, and local filesystem performance without requiring Node.js or Python installations on user machines.
 
-| Distribution Channel | Method / Command | Description |
-| :--- | :--- | :--- |
-| 💾 **Graphical Installer (`.exe`)** | [**Download Setup.exe (v1.2.0)**](https://github.com/abhishek01032007-pixel/Nexora/releases/download/v1.2.0/NexoraSkillsManager-Setup.exe) | Complete graphical setup with Start Menu shortcuts & automatic updates |
-| 📦 **Windows Package Manager** | `winget install Nexora.NexoraSkillsManager` | Automated silent installation via native Windows Package Manager |
-| ⚡ **One-Command Web Setup** | `irm https://raw.githubusercontent.com/.../setup.ps1 \| iex` | Fast, non-elevated installation to `%LOCALAPPDATA%\NexoraSkillsManager` |
-| 📁 **Portable ZIP (x64)** | [**Download Portable ZIP**](https://github.com/abhishek01032007-pixel/Nexora/releases/download/v1.2.0/NexoraSkillsManager-1.2.0-win-x64.zip) | Zero-install standalone archive. Extract anywhere and launch immediately |
+<p align="center">
+  <a href="https://github.com/abhishek01032007-pixel/Nexora/releases/download/v1.2.0/NexoraSkillsManager-Setup.exe">
+    <img src="https://img.shields.io/badge/⬇️%20Download%20for%20Windows-Setup.exe%20(v1.2.0)-0078D4?style=for-the-badge&logo=windows&logoColor=white" height="48" alt="Download for Windows" />
+  </a>
+</p>
 
----
+<p align="center">
+  <b>Official Release v1.2.0</b> • Windows 10 / 11 x64 • Standalone Installer (279 MB) • SHA-256 Verified
+</p>
 
-## ⚡ Quickstart Setup Commands
+### ⚡ Additional Installation Options
 
-### Option 1: One-Command Automated Setup
-Run in **Windows PowerShell** (non-elevated):
-```powershell
-irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex
-```
+* **One-Command Automated Setup (PowerShell):**  
+  Prefer command-line installation? Run this single non-elevated command in Windows PowerShell:
+  ```powershell
+  irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex
+  ```
+  *(Or in Windows CMD: `powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex"`)*
 
-Or run in **Windows Command Prompt (CMD)**:
-```cmd
-powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex"
-```
-
-### Option 2: WinGet Terminal Install
-```powershell
-winget install Nexora.NexoraSkillsManager
-```
+* **Portable Standalone Archive:**  
+  Prefer zero-installation? [**Download Portable ZIP (1.1 GB)**](https://github.com/abhishek01032007-pixel/Nexora/releases/download/v1.2.0/NexoraSkillsManager-1.2.0-win-x64.zip) — extract anywhere and launch immediately.
 
 > [!NOTE]
 > #### 📌 System Requirements & Prerequisites
-> * **Operating System:** Windows 10 & 11 (64-bit)
-> * **Runtime:** Windows PowerShell 5.1+ (Native Windows built-in — **No Node.js or Python installations required on user machines**)
+> * **Operating System:** Exclusively for **Windows 10 & 11 (64-bit)**
+> * **Runtime:** Windows PowerShell 5.1+ (Built into Windows — **No Node.js or Python required**)
 > * **Installation Scope:** 100% non-elevated per-user installation (`%LOCALAPPDATA%\NexoraSkillsManager`)
-> * **Disk Footprint:** ~150 MB
+> * **Disk Footprint:** ~150 MB (installed runtime)
 > * **Cryptographic Integrity:** Strict SHA-256 hash verification before package extraction
-> * **Environment:** Automatically configures `nexora` in your User PATH
+> * **Environment:** Automatically adds `nexora` to your User PATH
 
 ---
 
