@@ -23,19 +23,27 @@
 
 ## 💡 What is Nexora Skills Manager?
 
-Modern software engineering with AI agents has led to a severe **configuration fragmentation crisis**. Each IDE expects agent skills in a different format, directory, and schema:
+Modern AI coding is fragmented. You build custom workflows, rules, and skills, but they get trapped inside scattered configs—`.cursor/rules`, `.agents/skills`, `.agents/rules`, `.github/copilot-instructions`, or private folders. Every time someone switches between **Google Antigravity, Cursor, Claude Code, Windsurf, or GitHub Copilot**, skills fall out of sync, rules drift, and developer setups break.
 
-| AI IDE | Expected Skill Location | Format |
+**Nexora Skills Manager is the unified desktop control center for AI agent skills & architectural rules.**
+
+Import skills and rules directly from **GitHub repositories, Git links, ZIP packages, or local collections**, and immediately deploy them across all your projects and AI tools from one central place.
+
+| AI Platform | Supported Native Target | Schema & Format |
 | :--- | :--- | :--- |
-| **Google Antigravity** | `.agents/skills/<skill>/SKILL.md` | YAML frontmatter + Markdown |
+| **Google Antigravity** | `.agents/skills/<skill>/SKILL.md` & `.agents/rules/` | YAML frontmatter + Markdown |
 | **Cursor IDE** | `.cursor/rules/<skill>.mdc` | MDC metadata with glob triggers |
 | **GitHub Copilot** | `.github/copilot-instructions.md` | Delimited markdown sections |
-| **Claude Code** | `.claude/skills/<skill>/SKILL.md` | Isolated skill directories |
-| **OpenAI Codex** | `.codex/skills/<skill>/SKILL.md` | CLI tool definition format |
+| **Claude Code** | `CLAUDE.md` & `.claude/skills/` | Directives & isolated skill directories |
+| **Windsurf / OpenAI Codex** | `.windsurf/rules/` & `.codex/skills/` | Tool definitions & native guidelines |
 
-Updating a single prompt rule forces you to manually copy-paste, reformat, and synchronize across every repository and editor. If you edit one, the others drift out of date immediately.
-
-**Nexora Skills Manager eliminates this fragmentation.** It provides a native Windows desktop application where you discover, author, bundle, and maintain AI agent skills in one central vault — and compile them simultaneously into all 5 IDE target formats with a single click.
+### ⚡ Key Capabilities
+* **Direct Import from GitHub & Git Repositories:** Grab skills directly by pasting any GitHub repository link or downloading curated release packages. Nexora automatically parses manifests and enables granular single-skill extraction.
+* **Universal Multi-Platform Deployment:** Deploy the same skill or rule across **Google Antigravity, Cursor, Windsurf, Claude Code, and GitHub Copilot** at the same time with zero manual copy-pasting.
+* **Single Dashboard for All Workspaces:** Track all your active repositories from one clean desktop teleboard. Audit active skills, catch version drifts, and enforce architectural consistency across your team.
+* **Safe Deployments with One-Click Rollbacks:** Every deployment automatically takes an isolated safety snapshot beforehand. If a skill doesn't perform as expected, roll back instantly to your previous clean state.
+* **Smart Technology & Stack Detection:** Automatically analyzes your project (Flutter, React, Next.js, Node.js, Python, Go) and recommends prioritized skills built specifically for your architecture.
+* **Clean OS Performance & Health Doctor:** Built-in diagnostics inspect your environment, prevent file conflicts, purge dead locks, and keep your system fast and error-free.
 
 ---
 
