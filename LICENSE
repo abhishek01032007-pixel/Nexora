@@ -1,16 +1,65 @@
-MIT License
+# Nexora Dual License
 
-Copyright (c) 2026 Abhishek M
+Copyright (c) 2026 Abhishek M. All rights reserved.
+
+Nexora is distributed under a dual-licensing structure designed to provide free access for developers and teams while strictly protecting the application against unauthorized rebranding, repackaging, or resale.
+
+================================================================================
+PART 1: NEXORA APPLICATION & CORE RUNTIME LICENSE (NEXORA COMMUNITY LICENSE)
+================================================================================
+
+This license applies to the Nexora desktop application, graphical user interface,
+Electron host, IPC bridge, PowerShell engine, CLI binaries, installer, branding,
+logos, icons, and associated documentation ("The Application").
+
+1. GRANT OF USE
+Subject to the terms and conditions of this License, you are hereby granted a free,
+non-exclusive, non-transferable, revocable, worldwide license to download, install,
+execute, and run the Application for personal, educational, commercial, or
+internal organizational purposes.
+
+2. RESTRICTIONS & PROHIBITIONS
+You may NOT:
+a) Rebrand, rename, repackage, or distribute the Application or any derivative
+   work thereof under another name, brand, or trademark.
+b) Sublicense, sell, rent, lease, or commercially exploit the Application as a
+   standalone product, bundled re-distribution, or white-labeled service.
+c) Decompile, disassemble, decrypt, reverse engineer, or attempt to extract
+   underlying source code from compiled binaries, except strictly to the extent
+   permitted by mandatory applicable law.
+d) Remove, alter, or obscure any copyright, trademark, logo, or proprietary notices
+   contained within or displayed by the Application.
+
+3. TRADEMARKS & BRANDING
+All rights, title, and interest in and to the names "Nexora", "Nexora Skills Manager",
+"AGPM", associated logos, UI designs, and trade dress remain the exclusive intellectual
+property of Abhishek M. No rights or licenses to use these trademarks are granted
+except as necessary to identify the unmodified Application.
+
+================================================================================
+PART 2: SKILLS CATALOG & COMMUNITY CONTRIBUTIONS (MIT LICENSE)
+================================================================================
+
+This license applies to the public skill catalog definitions (`catalog/skills-index.json`),
+skill recipes, markdown instructions, and community-submitted skill packs ("The Skills Catalog").
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+of the Skills Catalog and associated documentation files, to deal in the Skills
+Catalog without restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
+Skills Catalog, and to permit persons to whom the Skills Catalog is furnished
+to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+copies or substantial portions of the Skills Catalog.
+
+================================================================================
+PART 3: THIRD-PARTY LICENSES & WARRANTY DISCLAIMER
+================================================================================
+
+Third-party dependencies and skills included in or referenced by this repository
+remain subject to their respective upstream licenses. See THIRD_PARTY_NOTICES.md
+and the third-party-licenses directory for details.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,

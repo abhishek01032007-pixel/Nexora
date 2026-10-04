@@ -340,4 +340,7 @@ Pre-verified skills categorized across 7 core engineering disciplines:
 
 ## 📄 License
 
-Released under the [MIT License](LICENSE).
+Nexora is distributed under a **Dual-License** model (see full terms in [`LICENSE`](LICENSE)):
+
+* 🖥️ **Application, Engine & Binaries**: Licensed under the **Nexora Community License** — free to download, install, and execute for personal, educational, commercial, and enterprise workflows. Unauthorized rebranding, renaming, repackaging, or redistributing the application, UI, or engine under another name is strictly prohibited.
+* 📦 **Skills Catalog & Community Recipes**: Licensed under the **[MIT License](LICENSE)** to foster an open, collaborative community of AI skills and engineering rules.
