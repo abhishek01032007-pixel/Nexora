@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">Nexora Skills Manager</h1>
+<h1 align="center">NEXORA SKILLS MANAGER</h1>
 
 <p align="center">
   <b>The Native Windows Desktop Control Plane for AI Agent Skills, Rules & Multi-IDE Fleet Synchronization.</b><br>
@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <a href="#-installation-options"><img src="https://img.shields.io/badge/Download-Windows%2010%20%7C%2011%20x64-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Download for Windows" /></a>
+  <a href="#-installation-options"><img src="https://img.shields.io/badge/Download-Windows%20x64-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Download for Windows x64" /></a>
   <a href="https://github.com/abhishek01032007-pixel/Nexora/releases/latest"><img src="https://img.shields.io/badge/Release-v1.2.0%20Latest-0A84FF?style=for-the-badge&logo=github&logoColor=white" alt="Latest Release" /></a>
   <a href="#option-2-one-command-automated-setup"><img src="https://img.shields.io/badge/Runtime-PowerShell%205.1%2B%20Native-5391FE?style=for-the-badge&logo=powershell&logoColor=white" alt="PowerShell Native" /></a>
   <a href="#-100-byte-for-byte-atomic-rollback-engine"><img src="https://img.shields.io/badge/Safety-100%25%20Atomic%20Rollback-10B981?style=for-the-badge&logo=shield&logoColor=white" alt="Atomic Rollback" /></a>
@@ -69,97 +69,136 @@ Import skills and rules directly from **GitHub repositories, Git links, ZIP pack
 
 #### In Windows PowerShell (Non-Elevated):
 ```powershell
-irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora-Skills-Manager/main/setup.ps1 | iex
 ```
 
 #### In Windows Command Prompt (CMD):
 ```cmd
-powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/setup.ps1 | iex"
+powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora-Skills-Manager/main/setup.ps1 | iex"
 ```
 
 > [!NOTE]
-> **System Requirements:**
-> * **OS:** Windows 10 & 11 (64-bit)
+> **System Requirements & Security:**
+> * **OS:** Windows 10 & 11 (Windows x64)
 > * **Runtime:** PowerShell 5.1+ (pre-installed — zero Node.js or Python)
 > * **Scope:** Per-user installation (`%LOCALAPPDATA%\NexoraSkillsManager`) — no admin required
+> * **Privacy:** Nexora is 100% local and does not transmit project contents or telemetry.
+> * **SmartScreen:** If Windows SmartScreen displays a warning for unsigned community releases, select "More info" → "Run anyway".
 > * **Disk:** ~150 MB • **Integrity:** SHA-256 verified • **PATH:** Auto-configured
 
 ---
 
-## 🚀 How It Works — 4-Step Workflow
+## 🚀 How It Works
 
-| Step | Phase | You Do | Nexora Does |
-| :---: | :--- | :--- | :--- |
-| **`01`** | **Connect Workspace** | Select your project folder | Auto-scans dependencies & initializes 5 target adapters |
-| **`02`** | **Skill Studio** | Browse **The Store** or author custom rules | Validates schema, tool bindings, and prompt instructions |
-| **`03`** | **Skill Wallet** | Assemble bundles & audit context | **Token Governor** calculates cumulative tokens & assigns headroom tier |
-| **`04`** | **Fleet Deploy** | Click **Apply to Workspace** | Synchronizes all 5 AI targets with atomic rollback snapshot |
+Nexora operates as a **local-first control plane** for AI coding rules and skills. Instead of manually copying instruction files into scattered IDE folders, Nexora coordinates your agent configurations through an automated 4-stage pipeline:
 
-<details>
-<summary><b>📋 Step-by-Step Detail Cards (expand)</b></summary>
+```
+[ Project Workspace ] ──► [ Tech Stack & Mode Engine ] ──► [ Token Governor ] ──► [ Multi-Platform Fleet Deployer ]
+```
 
-| 1️⃣ **Connect Workspace** | 2️⃣ **Skill Studio** |
-| :--- | :--- |
-| **📁 Ingestion & Adapter Setup**<br>• Point Nexora to your project root folder<br>• Auto-detects dependencies & active framework stack<br>• Initializes 5 target AI adapters (`.agents`, `.cursor`, `.github`, `.claude`, `.codex`) | **🛠️ Discovery & Instruction Authoring**<br>• Explore 48+ verified official skills in **The Store**<br>• Author bespoke instructions with the built-in Markdown editor<br>• Direct-import skills from any remote Git repository URL |
-| 3️⃣ **Skill Wallet** | 4️⃣ **Fleet Deploy** |
-| **📦 Stack Bundling & Token Safety**<br>• Organize downloaded skills into curated bundles<br>• Fine-tune per-stack prompt rules and custom overrides<br>• Real-time **Token Governor** calculates context headroom & tiers | **⚡ 1-Click Multi-IDE Sync**<br>• Click **Apply** to synchronize all 5 AI targets simultaneously<br>• Sub-second local compilation with zero cloud dependencies<br>• **100% Byte-for-Byte Atomic Rollback** snapshot protection |
+### 1. Ingestion & Automated Stack Detection
+* **Local Inspection:** When you select any project folder, Nexora inspects project manifests (`package.json`, `pubspec.yaml`, `pyproject.toml`, `go.mod`, `Cargo.toml`).
+* **Framework Identification:** It identifies your frontend, backend, database, and testing tools without uploading your code anywhere.
+* **Target Adapter Resolution:** It scans which AI assistants you use and locates their configuration targets (`.agents/skills`, `.cursor/rules`, `.github/copilot-instructions.md`, `.claude/skills`, `.codex/skills`).
 
-</details>
+### 2. Markdown-to-Native Transpilation Engine
+* Write once in clean Markdown with standard YAML headers.
+* Nexora automatically transpiles the rule into the native syntax each AI tool expects:
+  - **Google Antigravity**: Parses frontmatter into verified `.agents/skills/<name>/SKILL.md`.
+  - **Cursor IDE**: Generates `.cursor/rules/<name>.mdc` with glob patterns and `alwaysApply` flags.
+  - **GitHub Copilot**: Injects isolated fenced markdown blocks into `.github/copilot-instructions.md`.
+  - **Claude Code & Codex**: Formats directories with tool bindings into `.claude/skills/` and `.codex/skills/`.
+
+### 3. Context & Token Safety Governor
+* Before pushing rules to your editors, Nexora calculates the cumulative token count of your selected skills.
+* Prevents prompt bloat by classifying stacks into real-time tiers:
+  - 🟢 **Lean (< 1k tokens)**: Zero latency impact.
+  - 🔵 **Standard (1k–4k tokens)**: Balanced production depth.
+  - 🟡 **Pro (4k–8k tokens)**: Detailed rules with rich code patterns.
+  - 🔴 **Overflow (> 8k tokens)**: Visual warning to prune unnecessary skills.
+
+### 4. 100% Byte-for-Byte Atomic Rollback Protection
+* Before making any workspace changes, Nexora takes a pre-flight snapshot in `.nexora/snapshots/<timestamp>/`.
+* If a deployment is interrupted or you want to undo changes, the rollback engine restores your original files byte-for-byte in less than a second.
 
 ---
 
-## 📖 Practical Usage Scenarios
+## 🛠️ How to Use
 
-<details>
-<summary><b>Scenario 1: Initializing a New Project & Multi-IDE Target Sync</b></summary>
+Here is how you use Nexora for everyday engineering tasks:
 
-1. Launch **Nexora** from Start Menu or type `nexora start` in terminal.
-2. Click **Select Workspace** → browse to your project root (e.g., `D:\MyProject`).
-3. The **Project Detector** scans your codebase and shows active adapter badges:
-   * 🟢 `.agents/skills` (Antigravity) • 🟢 `.cursor/rules` (Cursor) • 🟢 `.github` (Copilot) • 🟢 `.claude/skills` (Claude) • 🟢 `.codex/skills` (Codex)
-4. Browse **The Store** → click **Install** on desired skills → click **Apply to Workspace**.
-5. All rule files are formatted, compiled, and written to their respective IDE folders in milliseconds.
+---
 
-</details>
+### 📱 Initializing a Project with Stack-Aware Skills *(Example: Flutter Mobile App)*
 
-<details>
-<summary><b>Scenario 2: Custom Bundle with Live Token Budgeting</b></summary>
+When starting work on an application (e.g., a Flutter app with a Supabase backend):
 
-1. Open **Skill Wallet** → click **`+ New Custom Bundle`**.
-2. Name your stack (e.g., `Fintech Secure Architecture Stack`).
-3. Select complementary skills (e.g., `backend-security-coder`, `postgresql-optimization`, `security_audit`).
-4. The **Token Governor Meter** displays combined token overhead and assigns a tier badge:
-   * **Lean** (< 1k tokens) • **Standard** (1k–4k) • **Pro** (4k–8k)
-5. Click **Save Bundle**. Stored in `%LOCALAPPDATA%\NexoraSkillsManager\vault\bundles` — reusable with 1 click.
+1. **Connect the Project**:
+   - Open Nexora and click **`Select Workspace`** → choose your project folder (e.g., `D:\Projects\ShopMobile`).
+   - Nexora instantly detects `Flutter 3.x`, `Dart`, and `Supabase`, illuminating active IDE badges (Antigravity and Cursor).
+2. **Set Your Working Mode**:
+   - Click the **Mobile** working mode pill.
+   - Nexora re-ranks the store to highlight relevant mobile rules:
+     - `flutter-build-responsive-layout`
+     - `flutter-apply-architecture-best-practices`
+     - `dart-add-unit-test`
+3. **Deploy with 1 Click**:
+   - Click **`Apply to Workspace`**.
+   - In ~150ms, Nexora compiles and writes rules into both `.agents/skills/` (for Antigravity) and `.cursor/rules/` (for Cursor).
 
-</details>
+---
 
-<details>
-<summary><b>Scenario 3: Upstream Updates & 3-Way Checksum Diffing</b></summary>
+### ⚡ Custom Stack Bundling with Live Token Budgeting *(Example: FastAPI Backend)*
 
-1. Navigate to **Updates** tab → Nexora compares local SHA-256 hashes against upstream releases.
-2. Click **Inspect Diff** for a 3-way visual comparison (Local ↔ Base ↔ Upstream).
-3. Click **Apply Update** → atomic snapshot taken, then changes merged cleanly.
+When building a specialized backend stack with strict token limits:
 
-</details>
+1. **Assemble Your Stack**:
+   - Open **Skill Wallet** → click **`+ New Custom Bundle`**.
+   - Name your bundle: `Fintech Secure FastAPI`.
+   - Select complementary skills:
+     - `python-fastapi-developer` (FastAPI + Pydantic v2 patterns)
+     - `postgresql-optimization` (Indexing, JSONB, query efficiency)
+     - `security_audit` (OWASP Top 10 prevention)
+2. **Audit the Token Budget**:
+   - The **Token Governor Meter** displays: `Total: 2,840 Tokens` with a 🔵 **Standard Tier** badge.
+   - You can see that your AI models retain ample context headroom for your actual codebase files.
+3. **Save and Apply**:
+   - Click **Save Bundle**. This stack is saved to your local vault and can be applied to any backend project with one click.
 
-<details>
-<summary><b>Scenario 4: Emergency Rollback</b></summary>
+---
 
-1. Open **Dashboard** → **Recent Operations** activity feed.
-2. Click **Rollback** or run `nexora rollback` from terminal.
-3. Nexora reads `.nexora/journal.json` and restores the exact pre-commit snapshot byte-for-byte in < 1 second.
+### 🌐 Direct Community Skill Import from GitHub
 
-</details>
+When your team or community shares custom rules in a Git repository:
 
-<details>
-<summary><b>Scenario 5: Running the System Doctor</b></summary>
+1. **Import via GitHub URL**:
+   - Click **`Import from GitHub`** in the top navigation bar.
+   - Paste the repository link: `https://github.com/my-org/core-agent-skills`.
+2. **Preview & Validate**:
+   - Nexora automatically inspects the repository's manifests and displays a checklist of discovered skills.
+   - Select the rules you want to import (e.g., `company-api-standards`, `git-commit-convention`).
+3. **Activate in Your Project**:
+   - Click **`Import to Vault`**. The skills are validated, saved locally, and immediately available for deployment across all your projects.
 
-1. Click **Doctor** in sidebar or run `nexora doctor` in terminal.
-2. Nexora runs 6 non-destructive diagnostic suites (metadata, entrypoints, catalog, CLI, legacy, adapters).
-3. Click **Auto-Repair** or run `nexora doctor --repair` to fix any detected issues automatically.
+---
 
-</details>
+### 🔄 Upstream Version Updates & 1-Click Rollback
+
+1. **Check for Upstream Enhancements**:
+   - Open the **Update Center**. Nexora compares your local skill versions against the latest upstream GitHub release.
+   - Click **`Inspect Diff`** to review changes side-by-side (Your Local Edits ↔ Upstream Update).
+2. **Instant Emergency Rollback**:
+   - If an updated skill causes unexpected behavior in your IDE, open the **Dashboard** → **Activity Log**.
+   - Click **`Rollback`**. Nexora immediately restores your previous rule configurations without touching your project source code.
+
+---
+
+### 🩺 System Diagnostics & Self-Repair
+
+1. Run the health check by clicking **`System Health`** in the sidebar (or typing `nexora doctor` in PowerShell/CMD).
+2. Nexora validates 6 diagnostic areas:
+   - `Metadata Integrity` • `Engine Entrypoints` • `Skill Catalog Database` • `CLI Shims & User PATH` • `Legacy Bridge` • `Platform Adapters`
+3. Click **`Auto-Repair`** to fix broken shims or purge dead cache locks with zero manual troubleshooting.
 
 ---
 
