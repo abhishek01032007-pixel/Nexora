@@ -261,7 +261,7 @@ Nexora is designed from the ground up to be safe for sensitive corporate, propri
 
 ## 💻 Terminal CLI Reference
 
-The `nexora` CLI is natively integrated into your Windows environment for rapid command-line automation:
+The `nexora` CLI (with backward-compatible alias `agpm`) is natively integrated into your Windows environment for rapid command-line automation:
 
 | Command | Action Performed |
 | :--- | :--- |
