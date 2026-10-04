@@ -134,7 +134,7 @@ Here is how you use Nexora for everyday engineering tasks:
 When starting work on an application (e.g., a Flutter app with a Supabase backend):
 
 1. **Connect the Project**:
-   - Open Nexora and click **`Select Workspace`** → choose your project folder (e.g., `D:\Projects\ShopMobile`).
+   - Open Nexora and click **`Select Workspace`** → choose your project folder (e.g., `C:\Projects\ShopMobile`).
    - Nexora instantly detects `Flutter 3.x`, `Dart`, and `Supabase`, illuminating active IDE badges (Antigravity and Cursor).
 2. **Set Your Working Mode**:
    - Click the **Mobile** working mode pill.
@@ -202,102 +202,105 @@ When your team or community shares custom rules in a Git repository:
 
 ---
 
-## 🤖 5-Platform AI Target Matrix
+## 🤖 AI Platform Target Matrix
 
-Write instructions once in clean Markdown; Nexora transpiles and writes automatically:
+Write instructions once in clean Markdown; Nexora transpiles and writes automatically into each native platform format:
 
-| AI IDE Target | Output Location | Compilation Behavior |
+| Target AI Assistant | Config Output Path | Native Format & Features |
 | :--- | :--- | :--- |
-| **Google Antigravity** | `.agents/skills/<skill>/SKILL.md` | YAML frontmatter validation + markdown body |
-| **Cursor IDE** | `.cursor/rules/<skill>.mdc` | MDC headers with glob triggers and `alwaysApply` flags |
-| **GitHub Copilot** | `.github/copilot-instructions.md` | Isolated delimiter fences preserving environment variables |
-| **Claude Code** | `.claude/skills/<skill>/SKILL.md` | Skill directories with tool capability bounds |
-| **OpenAI Codex** | `.codex/skills/<skill>/SKILL.md` | CLI-runner tool definition format |
+| **Google Antigravity** | `.agents/skills/<skill>/SKILL.md` | Standard YAML frontmatter + structured skill markdown instructions |
+| **Cursor IDE** | `.cursor/rules/<skill>.mdc` | MDC metadata headers with targeted file glob triggers and `alwaysApply` rules |
+| **GitHub Copilot** | `.github/copilot-instructions.md` | Delimiter-scoped markdown fences preserving project-wide instruction boundaries |
+| **Anthropic Claude Code** | `.claude/skills/<skill>/SKILL.md` & `CLAUDE.md` | Directives and isolated skill directories with tool capability bounds |
+| **OpenAI Codex** | `.codex/skills/<skill>/SKILL.md` | Native assistant agent format with tool schemas and CLI runners |
 
 ---
 
 ## 🛡️ Token Safety Governor
 
-AI models have strict context window budgets. Nexora's **Token Governor** prevents prompt bloat:
+AI models have strict context window envelopes. Nexora's **Token Governor** enforces real-time model safety, budget tuning, and prompt deduplication before rule deployment:
 
-| Tier | Tokens | Status | Usage |
-| :---: | :---: | :---: | :--- |
-| **Lean** | `< 1,000` | 🟢 `SAFE` | Focused rules — zero impact on model speed |
-| **Standard** | `1,000 – 4,000` | 🔵 `OPTIMAL` | Full-featured domain skills — recommended size |
-| **Pro** | `4,000 – 8,000` | 🟡 `MODERATE` | Deep bundles with extensive examples |
-| **Overflow** | `> 8,000` | 🔴 `WARNING` | Nexora warns to prune before deploying |
+### Quick Presets & Budget Configuration
+* 🌱 **Eco Preset (`4,000 tokens`)**: Minimalist rules with minimal prompt footprint; maximum conversational reasoning headroom.
+* ⚡ **Balanced Preset (`8,000 tokens` — Recommended)**: Optimal production balance; rich architectural guidelines without bloat.
+* 🚀 **Pro Preset (`16,000 tokens`)**: In-depth multi-file coding standards with complete implementation examples.
+* 🔥 **Max Preset (`32,000 tokens`)**: Comprehensive architecture rules for massive multi-tier monorepos.
+* 🎚️ **Custom Slider (`2,000 – 64,000 tokens`)**: Fine-grained project or fleet-wide budget tuning.
+
+### Real-Time Context Envelope Monitoring
+| Headroom Level | Context Load | Status Badge | Guidance |
+| :--- | :---: | :---: | :--- |
+| **Optimal Headroom** | `< 5%` load | 🟢 `badge-success` | Full context window available for deep reasoning and multi-file code synthesis |
+| **Moderate Working Load** | `5% – 15%` load | 🟡 `badge-warning` | Standard footprint. Ample room remains for typical coding iterations |
+| **Heavy Token Load** | `> 15%` load | 🔴 `badge-danger` | May compress model reasoning window. Token Optimizer auto-prunes redundant rules |
+
+### 3 Core Optimization Pillars (Saving up to 70.5% Overhead)
+1. **Surgical Skill Injection**: Strips verbose commentary and injects only functional constraints.
+2. **Delimiter-Scoped Fencing**: Keeps rule boundaries isolated so models never re-read unrelated guidelines.
+3. **Cross-Skill Deduplication**: Identifies overlapping rules between active skills and deduplicates them in memory.
+
+### Supported Model Context Envelopes
+* **Google Gemini (Antigravity)**: `2,000,000 tokens` (Ultra Long Context)
+* **Anthropic Claude (Claude Code)**: `200,000 tokens` (High Precision Reasoning)
+* **OpenAI GPT-4o & Codex**: `128,000 – 200,000 tokens` (Fast Execution Envelope)
+* **Local & Open-Source (Ollama / Llama-3)**: `32,000 – 64,000 tokens` (Critical Memory Headroom)
 
 ---
 
-## 🔄 100% Byte-for-Byte Atomic Rollback Engine
+## 🔒 Security, Privacy & Local-First Architecture
 
-Every modification is transactional:
+Nexora is designed from the ground up to be safe for sensitive corporate, proprietary, and private codebases:
 
-| Phase | What Happens |
-| :--- | :--- |
-| **1. Pre-Flight Snapshot** | SHA-256 hash of all target files archived into `.nexora/snapshots/<timestamp>/` |
-| **2. Atomic Write** | Batch transaction — aborts cleanly if power fails or error occurs mid-write |
-| **3. Journal Commit** | Operation logged to `.nexora/journal.json` with timestamp, skill IDs, and diff manifests |
-| **4. 1-Click Rollback** | Restores the pre-flight snapshot instantly — zero corrupted configurations |
-
----
-
-## 🩺 6-Category System Doctor
-
-```powershell
-nexora doctor --repair
-```
-
-| Suite | Validates | Auto-Repair |
-| :--- | :--- | :--- |
-| **Metadata** | `install.json` integrity | Reconstructs metadata |
-| **Engine** | `NexoraEngine.ps1` entrypoints | Restores from cache |
-| **Catalog** | 48+ skill database completeness | Rebuilds index |
-| **CLI Shims** | `nexora.cmd` & User PATH | Recreates shims |
-| **Legacy** | `agpm.cmd` backward compatibility | Re-links bridge |
-| **Adapters** | 5 IDE transpiler modules | Re-initializes registry |
+* 🛡️ **Air-Gapped & Zero Telemetry**: Operates 100% locally on your machine. Zero analytics, zero cloud pings, zero remote logging.
+* 📦 **Zero Source Code Ingestion**: Analyzes manifest files locally (`package.json`, `pubspec.yaml`, etc.) to detect frameworks. Your source code never leaves your drive.
+* ⚙️ **Sandboxed Process Isolation**: Electron renderer runs with `contextIsolation: true`, `nodeIntegration: false`, and `sandbox: true`. All backend execution passes through a hardened local JSON-RPC stdio channel.
+* 🔑 **Zero Elevation Required**: Installs and executes purely within User space (`%LOCALAPPDATA%\NexoraSkillsManager`). No Administrator or UAC prompts needed.
+* 🔐 **Cryptographic Verification**: Every skill update, catalog package, and release bundle is verified against authoritative SHA-256 checksums before installation.
 
 ---
 
 ## 💻 Terminal CLI Reference
 
-| Command | Description |
+The `nexora` CLI is natively integrated into your Windows environment for rapid command-line automation:
+
+| Command | Action Performed |
 | :--- | :--- |
-| `nexora start` | Launch the desktop graphical control plane |
-| `nexora scan [path]` | Detect tech stack and AI adapters in a project |
-| `nexora doctor [--repair]` | Run diagnostics and optionally auto-repair |
-| `nexora skills list [--category <cat>]` | List installed and available skills |
-| `nexora skills search <query>` | Search by keyword, language, or tool |
-| `nexora skills install <id> [--project <dir>]` | Install and compile a skill into a workspace |
-| `nexora skills bundle create <name> [skills...]` | Assemble a custom reusable bundle |
-| `nexora rollback [--steps <n>]` | Undo last deployment via journal snapshots |
-| `nexora update [--check] [--all]` | Check for upstream updates and apply diffs |
-| `nexora projects [list \| add \| remove]` | Manage registered project workspaces |
+| `nexora start` | Launches the desktop graphical control plane |
+| `nexora scan [path]` | Analyzes a project folder and detects active tech stack & IDE adapters |
+| `nexora doctor [--repair]` | Executes diagnostic checks and optionally auto-repairs shims and caches |
+| `nexora skills list` | Lists all active and cached skills |
+| `nexora skills search <query>` | Searches the catalog by framework, language, or tool |
+| `nexora skills install <id> [--project <path>]` | Installs and compiles a skill into a target project |
+| `nexora rollback [--steps <n>]` | Reverts the last deployment using atomic pre-flight snapshots |
+| `nexora update [--check \| --all]` | Checks for upstream releases and applies non-breaking patches |
+| `nexora projects [list \| add \| remove]` | Manages registered workspace directories |
+| `nexora --version` | Displays core engine and skill pack versions |
 
 ---
 
 ## 📦 Official Skill Catalog
 
-**48+ pre-verified skills** across 6 engineering pillars:
+Pre-verified skills categorized across 7 core engineering disciplines:
 
-| Category | Scope | Examples |
+| Engineering Pillar | Scope & Supported Stacks | Core Skills Included |
 | :--- | :--- | :--- |
-| 🌐 **Frontend & UI/UX** | React 19, Next.js 15, Flutter, React Native, Swift iOS, Kotlin Android | `frontend-developer`, `ui_ux_pro_max` |
-| ⚙️ **Backend** | REST/gRPC, Node.js, FastAPI, Go 1.21+, Rust | `backend-architect`, `python-fastapi-developer` |
-| 🛡️ **Security** | OWASP Top 10, Secrets Scanner, Auth Hardening | `security_audit`, `backend-security-coder` |
-| 🧪 **QA** | Unit Testing, Widget Testing, Scientific Debugger | `scaffold_tests`, `test_runner`, `debugger` |
-| 🗄️ **Database** | PostgreSQL, Supabase RLS, Clean Architecture, DDD | `postgresql-optimization` |
-| ☁️ **DevOps** | Docker, Kubernetes, CI/CD, Cloud Infrastructure | `docker-kubernetes-devops` |
+| 🌐 **Frontend & UI/UX** | React 19, Next.js 15, Vanilla CSS, Tailwind, Responsive Layouts | `frontend-developer`, `frontend_design`, `ui_ux_pro_max`, `enhance_ui` |
+| 📱 **Mobile Development** | Flutter, Dart, React Native, Swift iOS 18, Kotlin Android Compose | `flutter-build-responsive-layout`, `react-native-developer`, `swift-ios-developer` |
+| ⚙️ **Backend & APIs** | REST, GraphQL, gRPC, Node.js, FastAPI, Go 1.21+, Rust | `backend-architect`, `python-fastapi-developer`, `nodejs-backend-developer` |
+| 🛡️ **Security & Auditing** | OWASP Top 10, Secrets Detection, Auth/OAuth2, Threat Modeling | `security_audit`, `backend-security-coder`, `security-auditor` |
+| 🧪 **QA, Testing & Debugging** | Unit Testing, Mocking, Playwright, Cypress, Iron Law Debugger | `test_runner`, `scaffold_tests`, `debug_issue`, `dart-add-unit-test` |
+| ☁️ **DevOps & Cloud** | Docker, Kubernetes, Terraform, CI/CD Pipelines, Multi-Cloud | `docker-kubernetes-devops` |
+| 🗄️ **Database & Architecture** | PostgreSQL, Supabase, Hexagonal & Clean Architecture, DDD | `postgresql-optimization`, `supabase-postgres-best-practices`, `architecture-patterns` |
 
-> Catalog syncs with [`catalog/skills-index.json`](catalog/skills-index.json) with dual-tier offline cache fallback.
+> Catalog synchronizes with [`catalog/skills-index.json`](catalog/skills-index.json) with dual-tier offline cache fallback.
 
 ---
 
-## 📊 5-Platform Benchmark Trajectory
+## 📊 Benchmark Trajectory
 
 <p align="center">
   <a href="https://raw.githubusercontent.com/abhishek01032007-pixel/Nexora/main/assets/benchmark_trajectory.png" target="_blank" title="Click to view full-resolution benchmark trajectory graph">
-    <img src="assets/benchmark_trajectory.png" alt="5-Platform Multi-IDE Setup & Maintenance Trajectory" width="950" />
+    <img src="assets/benchmark_trajectory.png" alt="Multi-IDE Setup & Maintenance Trajectory" width="950" />
   </a>
 </p>
 
@@ -307,19 +310,20 @@ nexora doctor --repair
 | **Configuration Drift** | Diverges within days | Zero — single source of truth | **100%** 🔒 |
 | **Token Costs** | Unmonitored overflow | Active Governor with tier alerts | **65% ↓** 💰 |
 | **Rollback** | Manual file repair | Byte-for-byte atomic undo | **∞** 🛡️ |
-| **IDE Compatibility** | 1 target at a time | All 5 simultaneously | **5x** 🚀 |
+| **IDE Compatibility** | 1 target at a time | All supported IDEs simultaneously | **5x** 🚀 |
 
 ---
 
 ## 💡 Key Benefits
 
-| Benefit | Impact |
+| Benefit | Technical Impact |
 | :--- | :--- |
-| ⏱️ **90% Time Saved** | Stop configuring `.cursorrules`, `copilot-instructions`, and `SKILL.md` separately |
-| 🛡️ **Zero Broken Projects** | Byte-for-byte journal snapshots — never corrupted configurations |
-| 💰 **Token Cost Protection** | Prevent LLMs from wasting money on bloated instruction sets |
-| 🔒 **100% Local & Private** | Zero telemetry, zero cloud — works fully air-gapped |
-| 👥 **Instant Team Onboarding** | Commit versioned skill bundles for standardized engineering rules |
+| ⚡ **Simultaneous Multi-IDE Fleet Sync** | Write rules once in Markdown; compile and deploy to Google Antigravity, Cursor, Copilot, Claude, and Codex in < 150ms. |
+| 🛡️ **Zero-Regression Journaling** | Every change is backed by an automated pre-flight snapshot in `.nexora/snapshots/` for guaranteed 1-click rollback. |
+| 🧠 **Predictable Token Economics** | Enforce model context safety (4k–32k presets) with real-time headroom monitoring, eliminating token bloat and context exhaustion. |
+| 🔒 **Enterprise Air-Gapped Security** | 100% local execution with zero cloud telemetry, sandboxed IPC, and no administrative privileges required. |
+| 🔄 **Non-Destructive 3-Way Diffing** | Safely pull upstream rule improvements while preserving your team's custom modifications and local overrides. |
+| 🤝 **Instant Team Stack Standardization** | Commit curated skill packs to source control so every engineer on your team shares the exact same AI standards across different IDEs. |
 
 ---
 
